@@ -2263,6 +2263,39 @@ label {
     order: -1;
     max-width: 400px;
   }
+
+  /* Footer — stack before narrow viewports get a cramped 3-column row */
+  .footerInner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+    padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 36px);
+  }
+
+  .footerLeft {
+    flex-direction: column;
+    width: 100%;
+    gap: 28px;
+  }
+
+  .footerRight {
+    width: 100%;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .footerRightMenu:last-child {
+    text-align: start;
+  }
+
+  .footerMail {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footerButton {
+    width: 100%;
+  }
 }
 
 /* ==================== MOBILE ==================== */
@@ -2456,33 +2489,55 @@ label {
   }
 
   .footerInner {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .footerLeft {
-    flex-direction: column;
-    width: 100%;
     gap: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: max(28px, calc(16px + env(safe-area-inset-bottom, 0px)));
   }
 
-  .footerRight {
-    width: 100%;
-    align-items: stretch;
-    text-align: left;
+  .footerMenuTitle {
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+  }
+
+  .footerListItem {
+    padding: 11px 0;
+    margin-bottom: 0;
+    font-size: 15px;
+  }
+
+  .footerInput {
+    font-size: 16px;
+    min-height: 48px;
+    padding: 14px 20px;
+    flex: 1 1 auto;
+  }
+
+  .footerButton {
+    min-height: 48px;
+    padding: 14px 22px;
+    font-size: 12px;
+  }
+
+  .footerIcons {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footerIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .copyright {
+    text-align: center;
+    line-height: 1.55;
+    font-size: 12px;
   }
 
   .footerRightMenu:last-child {
     text-align: center;
-  }
-
-  .footerMail {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .footerButton {
-    width: 100%;
   }
 
   .payment {
