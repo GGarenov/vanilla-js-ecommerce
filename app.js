@@ -61,11 +61,11 @@ const products = [
     colors: [
       {
         code: "black",
-        img: "./img/air.png",
+        img: "./img/products/air.png",
       },
       {
         code: "darkblue",
-        img: "./img/air2.png",
+        img: "./img/products/air2.png",
       },
     ],
   },
@@ -76,11 +76,11 @@ const products = [
     colors: [
       {
         code: "lightgray",
-        img: "./img/jordan.png",
+        img: "./img/products/jordan.png",
       },
       {
         code: "green",
-        img: "./img/jordan2.png",
+        img: "./img/products/jordan2.png",
       },
     ],
   },
@@ -91,11 +91,11 @@ const products = [
     colors: [
       {
         code: "lightgray",
-        img: "./img/blazer.png",
+        img: "./img/products/blazer.png",
       },
       {
         code: "green",
-        img: "./img/blazer2.png",
+        img: "./img/products/blazer2.png",
       },
     ],
   },
@@ -106,11 +106,11 @@ const products = [
     colors: [
       {
         code: "black",
-        img: "./img/crater.png",
+        img: "./img/products/crater.png",
       },
       {
         code: "lightgray",
-        img: "./img/crater2.png",
+        img: "./img/products/crater2.png",
       },
     ],
   },
@@ -121,11 +121,11 @@ const products = [
     colors: [
       {
         code: "gray",
-        img: "./img/hippie.png",
+        img: "./img/products/hippie.png",
       },
       {
         code: "black",
-        img: "./img/hippie2.png",
+        img: "./img/products/hippie2.png",
       },
     ],
   },
@@ -139,11 +139,11 @@ const womanProducts = [
     colors: [
       {
         code: "white",
-        img: "./img/woman_airforce1.png",
+        img: "./img/woman/woman_airforce1.png",
       },
       {
         code: "pink",
-        img: "./img/woman_airforce2.png",
+        img: "./img/woman/woman_airforce2.png",
       },
     ],
   },
@@ -154,11 +154,11 @@ const womanProducts = [
     colors: [
       {
         code: "pink",
-        img: "./img/jordan_pink.png",
+        img: "./img/woman/jordan_pink.png",
       },
       {
         code: "gray",
-        img: "./img/jordan_gray.png",
+        img: "./img/woman/jordan_gray.png",
       },
     ],
   },
@@ -169,15 +169,15 @@ const womanProducts = [
     colors: [
       {
         code: "pink",
-        img: "./img/vomero_woman2.png",
+        img: "./img/woman/vomero_woman2.png",
       },
       {
         code: "green",
-        img: "./img/vomero_woman1.png",
+        img: "./img/woman/vomero_woman1.png",
       },
       {
         code: "blue",
-        img: "./img/vomero_woman3.png",
+        img: "./img/woman/vomero_woman3.png",
       },
     ],
   },
