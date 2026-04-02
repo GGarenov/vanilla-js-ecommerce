@@ -247,6 +247,18 @@ const currentWomanProductPrice = document.querySelector(".womanProductPrice");
 const currentWomanProductColors = document.querySelectorAll(".womanColor");
 const currentWomanProductSizes = document.querySelectorAll(".womanSize");
 
+function syncWomanColorSwatches() {
+  currentWomanProductColors.forEach((el, i) => {
+    const c = choosenWomanProduct.colors[i];
+    if (c) {
+      el.style.display = "";
+      el.style.backgroundColor = c.code;
+    } else {
+      el.style.display = "none";
+    }
+  });
+}
+
 const currentManProductImage = document.querySelector(".manProductImg");
 const currentManProductTitle = document.querySelector(".manProductTitle");
 const currentManProductPrice = document.querySelector(".manProductPrice");
@@ -295,9 +307,7 @@ if (womanWrapper && womanSliderItems.length) {
       if (currentWomanProductImage) {
         currentWomanProductImage.src = choosenWomanProduct.colors[0].img;
       }
-      currentWomanProductColors.forEach((color, index) => {
-        color.style.backgroundColor = choosenWomanProduct.colors[index].code;
-      });
+      syncWomanColorSwatches();
 
       womanWrapper.style.transform = `translateX(${(-100 * index) / womanSlideCount}%)`;
     });
@@ -340,9 +350,13 @@ currentProductColors.forEach((color, index) => {
 
 currentWomanProductColors.forEach((color, index) => {
   color.addEventListener("click", () => {
-    currentWomanProductImage.src = choosenWomanProduct.colors[index].img;
+    const variant = choosenWomanProduct.colors[index];
+    if (!variant) return;
+    currentWomanProductImage.src = variant.img;
   });
 });
+
+syncWomanColorSwatches();
 
 currentManProductColors.forEach((color, index) => {
   color.addEventListener("click", () => {
