@@ -1721,17 +1721,19 @@ footer {
   margin-right: 10px;
 }
 
-/* ==================== SALE SECTION ==================== */
+/* ==================== SALE SECTION (dark theme) ==================== */
 
 .saleSection {
   overflow: hidden;
+  background: #111;
+  color: #fafafa;
 }
 
-/* Hero Banner */
+/* Hero — photo stays; heavier overlay so it matches #111 page tone */
 .saleHero {
   position: relative;
   height: 420px;
-  background: url("./img/sale/sale_background.jpg") center/cover no-repeat;
+  background: url("./img/sale/sale_background.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1742,9 +1744,10 @@ footer {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.75) 0%,
-    rgba(54, 158, 98, 0.45) 100%
+    165deg,
+    rgba(5, 5, 5, 0.88) 0%,
+    rgba(17, 17, 17, 0.78) 45%,
+    rgba(54, 158, 98, 0.22) 100%
   );
   z-index: 0;
 }
@@ -1753,20 +1756,21 @@ footer {
   position: relative;
   z-index: 1;
   text-align: center;
-  color: white;
+  color: #fafafa;
 }
 
 .saleBadge {
   display: inline-block;
-  background: #369e62;
-  color: white;
-  padding: 6px 24px;
-  border-radius: 30px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 3px;
+  background: rgba(54, 158, 98, 0.25);
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 4px;
   text-transform: uppercase;
   margin-bottom: 16px;
+  border: 1px solid rgba(54, 158, 98, 0.45);
   animation: salePulse 2s ease-in-out infinite;
 }
 
@@ -1777,8 +1781,8 @@ footer {
     opacity: 1;
   }
   50% {
-    transform: scale(1.05);
-    opacity: 0.85;
+    transform: scale(1.04);
+    opacity: 0.92;
   }
 }
 
@@ -1788,22 +1792,22 @@ footer {
   letter-spacing: 6px;
   margin: 0;
   line-height: 1;
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
 }
 
 .saleHeroSubtitle {
-  font-size: clamp(16px, 2.5vw, 24px);
+  font-size: clamp(16px, 2.5vw, 22px);
   font-weight: 300;
   margin-top: 12px;
   letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .saleHighlight {
-  color: #369e62;
+  color: #4ade80;
   font-weight: 700;
 }
 
-/* Countdown timer */
 .saleTimer {
   display: flex;
   align-items: center;
@@ -1816,10 +1820,10 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
   padding: 14px 20px;
   min-width: 72px;
 }
@@ -1829,35 +1833,35 @@ footer {
   font-weight: 900;
   line-height: 1;
   font-variant-numeric: tabular-nums;
+  color: #fff;
 }
 
 .saleTimerLabel {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  opacity: 0.7;
+  color: rgba(255, 255, 255, 0.45);
   margin-top: 4px;
 }
 
 .saleTimerSep {
   font-size: 28px;
   font-weight: 700;
-  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.35);
   line-height: 1;
   padding-bottom: 16px;
 }
 
-/* Product area */
+/* Product block */
 .saleProduct {
   display: flex;
   gap: 60px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 40px;
+  padding: 80px clamp(20px, 4vw, 48px);
   align-items: flex-start;
 }
 
-/* Gallery */
 .saleProductGallery {
   flex: 1;
   min-width: 0;
@@ -1865,7 +1869,8 @@ footer {
 
 .saleProductMain {
   position: relative;
-  background: #f0f0f0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   overflow: hidden;
   display: flex;
@@ -1873,6 +1878,12 @@ footer {
   justify-content: center;
   aspect-ratio: 1;
   cursor: zoom-in;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.saleProductMain:hover {
+  border-color: rgba(54, 158, 98, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
 .saleMainImg {
@@ -1896,25 +1907,27 @@ footer {
   width: calc(25% - 9px);
   aspect-ratio: 1;
   object-fit: contain;
-  background: #f0f0f0;
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 12px;
   cursor: pointer;
   border: 2px solid transparent;
   padding: 6px;
   transition:
     border-color 0.25s,
-    transform 0.25s;
+    transform 0.25s,
+    background 0.25s;
 }
 
 .saleThumb:hover {
   transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .saleThumb.active {
   border-color: #369e62;
+  background: rgba(54, 158, 98, 0.08);
 }
 
-/* Product info */
 .saleProductInfo {
   flex: 1;
   min-width: 0;
@@ -1922,26 +1935,27 @@ footer {
 
 .saleTag {
   display: inline-block;
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  background: linear-gradient(135deg, #dc2626, #991b1b);
   color: white;
-  padding: 5px 18px;
-  border-radius: 6px;
-  font-size: 12px;
+  padding: 6px 18px;
+  border-radius: 8px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 3px;
 }
 
 .saleProductTitle {
-  font-size: 42px;
+  font-size: clamp(32px, 4vw, 42px);
   font-weight: 900;
   margin: 16px 0 0;
   line-height: 1.1;
+  color: #fafafa;
 }
 
 .saleProductEdition {
-  font-size: 18px;
-  color: #888;
-  margin: 4px 0 24px;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 6px 0 24px;
   font-weight: 300;
   letter-spacing: 1px;
 }
@@ -1951,11 +1965,12 @@ footer {
   align-items: center;
   gap: 16px;
   margin-bottom: 24px;
+  flex-wrap: wrap;
 }
 
 .saleOldPrice {
   font-size: 22px;
-  color: #aaa;
+  color: rgba(255, 255, 255, 0.35);
   text-decoration: line-through;
   font-weight: 400;
 }
@@ -1963,38 +1978,38 @@ footer {
 .saleNewPrice {
   font-size: 40px;
   font-weight: 900;
-  color: #369e62;
+  color: #4ade80;
 }
 
 .saleDiscount {
-  background: rgba(231, 76, 60, 0.12);
-  color: #e74c3c;
-  padding: 4px 12px;
-  border-radius: 6px;
-  font-size: 14px;
+  background: rgba(239, 68, 68, 0.18);
+  color: #fca5a5;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 13px;
   font-weight: 700;
+  border: 1px solid rgba(239, 68, 68, 0.25);
 }
 
 .saleProductDesc {
   font-size: 15px;
-  line-height: 1.7;
-  color: #666;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.5);
   margin-bottom: 28px;
 }
 
-/* Sizes */
 .saleSizes {
   margin-bottom: 32px;
 }
 
 .saleSizeLabel {
   display: block;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 12px;
-  color: #444;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .saleSizeOptions {
@@ -2009,49 +2024,48 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #ddd;
+  border: 2px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
-  background: white;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .saleSizeBtn:hover {
-  border-color: #111;
+  border-color: rgba(255, 255, 255, 0.45);
 }
 
 .saleSizeBtn.saleSizeActive {
-  background: #111;
-  color: white;
-  border-color: #111;
+  background: #fafafa;
+  color: #111;
+  border-color: #fafafa;
 }
 
-/* Buy button */
 .saleBuyBtn {
   width: 100%;
-  padding: 18px;
-  background: #111;
-  color: white;
+  padding: 16px 24px;
+  background: #fafafa;
+  color: #111;
   border: none;
   border-radius: 14px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 2px;
   cursor: pointer;
   transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
+  font-family: inherit;
 }
 
 .saleBuyBtn:hover {
   background: #369e62;
+  color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(54, 158, 98, 0.35);
 }
 
-/* Sale features checkmarks */
 .saleFeatures {
   display: flex;
   gap: 24px;
@@ -2061,14 +2075,14 @@ footer {
 
 .saleFeature {
   font-size: 13px;
-  color: #777;
+  color: rgba(255, 255, 255, 0.45);
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
 .saleFeatureIcon {
-  color: #369e62;
+  color: #4ade80;
   font-weight: 700;
   font-size: 16px;
 }

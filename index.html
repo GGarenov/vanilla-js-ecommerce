@@ -1,577 +1,799 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">   
-<title>Vanilla E-Commercet</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vanilla E-Commercet</title>
+  </head>
+  <body>
     <nav id="nav">
-        <div class="navTop">
-            <a href="#" class="navBrand">
-                <img src="./img/logo.png" alt="Logo" class="logo">
-            </a>
-            <div class="search">
-                <svg class="searchSvg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input type="text" placeholder="Search products..." class="searchInput">
-            </div>
-            <div class="navTopRight">
-                <a href="#saleSection" class="onSaleLink">
-                    <span class="onSale">SALE</span>
-                </a>
-                <button class="navHamburger" id="navHamburger" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+      <div class="navTop">
+        <a href="#" class="navBrand">
+          <img src="./img/logo.png" alt="Logo" class="logo" />
+        </a>
+        <div class="search">
+          <svg
+            class="searchSvg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search products..."
+            class="searchInput"
+          />
         </div>
+        <div class="navTopRight">
+          <a href="#saleSection" class="onSaleLink">
+            <span class="onSale">SALE</span>
+          </a>
+          <button
+            class="navHamburger"
+            id="navHamburger"
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
 
-        <div class="navMenu" id="navMenu">
-            <div class="navMid">
-                <h3 class="menuItem">AIR FORCE</h3>
-                <h3 class="menuItem">JORDAN</h3>
-                <h3 class="menuItem">BLAZER</h3>
-                <h3 class="menuItem">CRATER</h3>
-                <h3 class="menuItem">HIPPIE</h3>
-            </div>
-            <div class="navBottom">
-                <h3 class="menuItem" id="manNavItem">MAN</h3>
-                <h3 class="menuItem" id="womanNavItem">WOMAN</h3>
-            </div>
+      <div class="navMenu" id="navMenu">
+        <div class="navMid">
+          <h3 class="menuItem">AIR FORCE</h3>
+          <h3 class="menuItem">JORDAN</h3>
+          <h3 class="menuItem">BLAZER</h3>
+          <h3 class="menuItem">CRATER</h3>
+          <h3 class="menuItem">HIPPIE</h3>
         </div>
+        <div class="navBottom">
+          <h3 class="menuItem" id="manNavItem">MAN</h3>
+          <h3 class="menuItem" id="womanNavItem">WOMAN</h3>
+        </div>
+      </div>
     </nav>
     <div class="slider">
-        <div class="sliderWrapper">
-            <div class="sliderItem">
-                <div class="sliderContent">
-                    <span class="sliderTag">NEW SEASON</span>
-                    <h1 class="sliderTitle">AIR FORCE</h1>
-                    <p class="sliderSub">Classic style, reimagined for the new era.</p>
-                    <h2 class="sliderPrice">$119</h2>
-                    <a href="#product"><button class="buyButton">SHOP NOW &#8594;</button></a>
-                </div>
-                <div class="sliderVisual">
-                    <div class="sliderBg"></div>
-                    <img src="./img/air.png" alt="Air Force" class="sliderImg">
-                </div>
-            </div>
-            <div class="sliderItem">
-                <div class="sliderContent">
-                    <span class="sliderTag">NEW SEASON</span>
-                    <h1 class="sliderTitle">AIR JORDAN</h1>
-                    <p class="sliderSub">Born on the court, built for the streets.</p>
-                    <h2 class="sliderPrice">$149</h2>
-                    <a href="#product"><button class="buyButton">SHOP NOW &#8594;</button></a>
-                </div>
-                <div class="sliderVisual">
-                    <div class="sliderBg"></div>
-                    <img src="./img/jordan.png" alt="Air Jordan" class="sliderImg">
-                </div>
-            </div>
-            <div class="sliderItem">
-                <div class="sliderContent">
-                    <span class="sliderTag">NEW SEASON</span>
-                    <h1 class="sliderTitle">BLAZER</h1>
-                    <p class="sliderSub">Vintage basketball heritage meets modern edge.</p>
-                    <h2 class="sliderPrice">$219</h2>
-                    <a href="#product"><button class="buyButton">SHOP NOW &#8594;</button></a>
-                </div>
-                <div class="sliderVisual">
-                    <div class="sliderBg"></div>
-                    <img src="./img/blazer.png" alt="Blazer" class="sliderImg">
-                </div>
-            </div>
-            <div class="sliderItem">
-                <div class="sliderContent">
-                    <span class="sliderTag">NEW SEASON</span>
-                    <h1 class="sliderTitle">CRATER</h1>
-                    <p class="sliderSub">Sustainable innovation, one step at a time.</p>
-                    <h2 class="sliderPrice">$529</h2>
-                    <a href="#product"><button class="buyButton">SHOP NOW &#8594;</button></a>
-                </div>
-                <div class="sliderVisual">
-                    <div class="sliderBg"></div>
-                    <img src="./img/crater.png" alt="Crater" class="sliderImg">
-                </div>
-            </div>
-            <div class="sliderItem">
-                <div class="sliderContent">
-                    <span class="sliderTag">NEW SEASON</span>
-                    <h1 class="sliderTitle">HIPPIE</h1>
-                    <p class="sliderSub">Free-spirited design, unapologetically bold.</p>
-                    <h2 class="sliderPrice">$49</h2>
-                    <a href="#product"><button class="buyButton">SHOP NOW &#8594;</button></a>
-                </div>
-                <div class="sliderVisual">
-                    <div class="sliderBg"></div>
-                    <img src="./img/hippie.png" alt="Hippie" class="sliderImg">
-                </div>
-            </div>
+      <div class="sliderWrapper">
+        <div class="sliderItem">
+          <div class="sliderContent">
+            <span class="sliderTag">NEW SEASON</span>
+            <h1 class="sliderTitle">AIR FORCE</h1>
+            <p class="sliderSub">Classic style, reimagined for the new era.</p>
+            <h2 class="sliderPrice">$119</h2>
+            <a href="#product"
+              ><button class="buyButton">SHOP NOW &#8594;</button></a
+            >
+          </div>
+          <div class="sliderVisual">
+            <div class="sliderBg"></div>
+            <img src="./img/air.png" alt="Air Force" class="sliderImg" />
+          </div>
         </div>
+        <div class="sliderItem">
+          <div class="sliderContent">
+            <span class="sliderTag">NEW SEASON</span>
+            <h1 class="sliderTitle">AIR JORDAN</h1>
+            <p class="sliderSub">Born on the court, built for the streets.</p>
+            <h2 class="sliderPrice">$149</h2>
+            <a href="#product"
+              ><button class="buyButton">SHOP NOW &#8594;</button></a
+            >
+          </div>
+          <div class="sliderVisual">
+            <div class="sliderBg"></div>
+            <img src="./img/jordan.png" alt="Air Jordan" class="sliderImg" />
+          </div>
+        </div>
+        <div class="sliderItem">
+          <div class="sliderContent">
+            <span class="sliderTag">NEW SEASON</span>
+            <h1 class="sliderTitle">BLAZER</h1>
+            <p class="sliderSub">
+              Vintage basketball heritage meets modern edge.
+            </p>
+            <h2 class="sliderPrice">$219</h2>
+            <a href="#product"
+              ><button class="buyButton">SHOP NOW &#8594;</button></a
+            >
+          </div>
+          <div class="sliderVisual">
+            <div class="sliderBg"></div>
+            <img src="./img/blazer.png" alt="Blazer" class="sliderImg" />
+          </div>
+        </div>
+        <div class="sliderItem">
+          <div class="sliderContent">
+            <span class="sliderTag">NEW SEASON</span>
+            <h1 class="sliderTitle">CRATER</h1>
+            <p class="sliderSub">Sustainable innovation, one step at a time.</p>
+            <h2 class="sliderPrice">$529</h2>
+            <a href="#product"
+              ><button class="buyButton">SHOP NOW &#8594;</button></a
+            >
+          </div>
+          <div class="sliderVisual">
+            <div class="sliderBg"></div>
+            <img src="./img/crater.png" alt="Crater" class="sliderImg" />
+          </div>
+        </div>
+        <div class="sliderItem">
+          <div class="sliderContent">
+            <span class="sliderTag">NEW SEASON</span>
+            <h1 class="sliderTitle">HIPPIE</h1>
+            <p class="sliderSub">
+              Free-spirited design, unapologetically bold.
+            </p>
+            <h2 class="sliderPrice">$49</h2>
+            <a href="#product"
+              ><button class="buyButton">SHOP NOW &#8594;</button></a
+            >
+          </div>
+          <div class="sliderVisual">
+            <div class="sliderBg"></div>
+            <img src="./img/hippie.png" alt="Hippie" class="sliderImg" />
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="features">
-        <div class="feature">
-            <div class="featureIconWrap">
-                <img class="featureIcon" src="./img/shipping.png" alt="">
-            </div>
-            <span class="featureTitle">FREE SHIPPING</span>
-            <span class="featureDescription">Free worldwide shipping on every order, no minimum required.</span>
+      <div class="feature">
+        <div class="featureIconWrap">
+          <img class="featureIcon" src="./img/shipping.png" alt="" />
         </div>
-        <div class="feature">
-            <div class="featureIconWrap">
-                <img class="featureIcon" src="./img/return.png" alt="">
-            </div>
-            <span class="featureTitle">30 DAYS RETURN</span>
-            <span class="featureDescription">No-questions-asked returns and easy refunds within 30 days.</span>
+        <span class="featureTitle">FREE SHIPPING</span>
+        <span class="featureDescription"
+          >Free worldwide shipping on every order, no minimum required.</span
+        >
+      </div>
+      <div class="feature">
+        <div class="featureIconWrap">
+          <img class="featureIcon" src="./img/return.png" alt="" />
         </div>
-        <div class="feature">
-            <div class="featureIconWrap">
-                <img class="featureIcon" src="./img/gift.png" alt="">
-            </div>
-            <span class="featureTitle">GIFT CARDS</span>
-            <span class="featureDescription">Buy gift cards and redeem coupon codes at checkout.</span>
+        <span class="featureTitle">30 DAYS RETURN</span>
+        <span class="featureDescription"
+          >No-questions-asked returns and easy refunds within 30 days.</span
+        >
+      </div>
+      <div class="feature">
+        <div class="featureIconWrap">
+          <img class="featureIcon" src="./img/gift.png" alt="" />
         </div>
-        <div class="feature">
-            <div class="featureIconWrap">
-                <img class="featureIcon" src="./img/contact.png" alt="">
-            </div>
-            <span class="featureTitle">CONTACT US</span>
-            <span class="featureDescription">24/7 support via email, chat, and our help center.</span>
+        <span class="featureTitle">GIFT CARDS</span>
+        <span class="featureDescription"
+          >Buy gift cards and redeem coupon codes at checkout.</span
+        >
+      </div>
+      <div class="feature">
+        <div class="featureIconWrap">
+          <img class="featureIcon" src="./img/contact.png" alt="" />
         </div>
+        <span class="featureTitle">CONTACT US</span>
+        <span class="featureDescription"
+          >24/7 support via email, chat, and our help center.</span
+        >
+      </div>
     </div>
 
     <div class="product" id="product">
-        <div class="productInner">
-            <div class="productVisual">
-                <div class="productGlow"></div>
-                <img src="./img/air.png" alt="" class="productImg">
-            </div>
-            <div class="productDetails">
-                <span class="productTag">BESTSELLER</span>
-                <h1 class="productTitle">AIR FORCE</h1>
-                <p class="productPrice">$119</p>
-                <p class="productDescription">Premium leather upper with timeless silhouette and responsive Air cushioning. Built for everyday comfort and street-ready style.</p>
-                <span class="productSectionLabel">Color</span>
-                <div class="colors">
-                    <div class="color"></div>
-                    <div class="color"></div>
-                </div>
-                <span class="productSectionLabel">Size</span>
-                <div class="sizes">
-                    <div class="size">42</div>
-                    <div class="size">43</div>
-                    <div class="size">44</div>
-                </div>
-                <button class="productButton">ADD TO CART</button>
-            </div>
+      <div class="productInner">
+        <div class="productVisual">
+          <div class="productGlow"></div>
+          <img src="./img/air.png" alt="" class="productImg" />
         </div>
+        <div class="productDetails">
+          <span class="productTag">BESTSELLER</span>
+          <h1 class="productTitle">AIR FORCE</h1>
+          <p class="productPrice">$119</p>
+          <p class="productDescription">
+            Premium leather upper with timeless silhouette and responsive Air
+            cushioning. Built for everyday comfort and street-ready style.
+          </p>
+          <span class="productSectionLabel">Color</span>
+          <div class="colors">
+            <div class="color"></div>
+            <div class="color"></div>
+          </div>
+          <span class="productSectionLabel">Size</span>
+          <div class="sizes">
+            <div class="size">42</div>
+            <div class="size">43</div>
+            <div class="size">44</div>
+          </div>
+          <button class="productButton">ADD TO CART</button>
+        </div>
+      </div>
 
-        <div class="payment">
-            <span class="close">&times;</span>
-            <h2 class="payTitle">Personal Information</h2>
-            <label>First name</label>
-            <input type="text" placeholder="Enter your first name here" class="payInput">
-            <label>Last name</label>
-            <input type="text" placeholder="Enter your last name here" class="payInput">
-            <label>Phone number</label>
-            <input type="text" placeholder="Enter your phone number here" class="payInput">
-            <label>Delivery Address</label>
-            <input type="text" placeholder="Enter your address here" class="payInput">
-            <h2 class="payTitle">Card Information</h2>
-            <div class="cardIcons">
-                <img src="./img/visa.png" width="40" class="cardIcon" alt="">
-                <img src="./img/master.png" width="40" class="cardIcon" alt="">
-            </div>
-            <input type="password" class="payInput" placeholder="Enter your 10-digits card number here">
-            <div class="cardInfo">
-                <input type="text" placeholder="mm" class="payInput sm">
-                <input type="text" placeholder="yyyy" class="payInput sm">
-                <input type="text" placeholder="cvv" class="payInput sm">
-            </div>
-            <button class="payButton">Checkout</button>
+      <div class="payment">
+        <span class="close">&times;</span>
+        <h2 class="payTitle">Personal Information</h2>
+        <label>First name</label>
+        <input
+          type="text"
+          placeholder="Enter your first name here"
+          class="payInput"
+        />
+        <label>Last name</label>
+        <input
+          type="text"
+          placeholder="Enter your last name here"
+          class="payInput"
+        />
+        <label>Phone number</label>
+        <input
+          type="text"
+          placeholder="Enter your phone number here"
+          class="payInput"
+        />
+        <label>Delivery Address</label>
+        <input
+          type="text"
+          placeholder="Enter your address here"
+          class="payInput"
+        />
+        <h2 class="payTitle">Card Information</h2>
+        <div class="cardIcons">
+          <img src="./img/visa.png" width="40" class="cardIcon" alt="" />
+          <img src="./img/master.png" width="40" class="cardIcon" alt="" />
         </div>
+        <input
+          type="password"
+          class="payInput"
+          placeholder="Enter your 10-digits card number here"
+        />
+        <div class="cardInfo">
+          <input type="text" placeholder="mm" class="payInput sm" />
+          <input type="text" placeholder="yyyy" class="payInput sm" />
+          <input type="text" placeholder="cvv" class="payInput sm" />
+        </div>
+        <button class="payButton">Checkout</button>
+      </div>
     </div>
 
-
     <section class="womanCategory" id="womanCategory">
-        <div class="womanCategoryInner">
-            <header class="womanCategoryHeader">
-                <span class="womanCategoryTag">WOMEN&apos;S COLLECTION</span>
-                <h2 class="womanSneakers">WOMAN SNEAKERS</h2>
-                <p class="womanCategorySub">Bold silhouettes &mdash; pink accents on deep black.</p>
-            </header>
-            <nav class="womanNav" aria-label="Women sneaker lines">
-                <h3 class="womanItem">AIR FORCE 1</h3>
-                <h3 class="womanItem">AIR JORDAN LOW</h3>
-                <h3 class="womanItem">NIKE VOMERO</h3>
-            </nav>
-            <div class="womanSlider">
-                <div class="womanWrapper">
-                    <div class="womanSliderItem">
-                        <div class="womanSlideContent">
-                            <span class="womanSlideTag">NEW SEASON</span>
-                            <h1 class="womanSlideTitle">AIR FORCE 1</h1>
-                            <p class="womanSlideSub">Crisp leather and pearl details for a fresh take on the icon.</p>
-                            <p class="womanSlidePrice">$419</p>
-                            <a href="#womanProduct"><button type="button" class="womanSlideBtn">SHOP NOW &#8594;</button></a>
-                        </div>
-                        <div class="womanSliderVisual">
-                            <div class="womanBg"></div>
-                            <img src="./img/woman_airforce1.png" alt="Air Force 1" class="womanSliderImage">
-                        </div>
-                    </div>
-                    <div class="womanSliderItem">
-                        <div class="womanSlideContent">
-                            <span class="womanSlideTag">NEW SEASON</span>
-                            <h1 class="womanSlideTitle">AIR JORDAN LOW</h1>
-                            <p class="womanSlideSub">Court heritage with soft pastels and everyday comfort.</p>
-                            <p class="womanSlidePrice">$359</p>
-                            <a href="#womanProduct"><button type="button" class="womanSlideBtn">SHOP NOW &#8594;</button></a>
-                        </div>
-                        <div class="womanSliderVisual">
-                            <div class="womanBg"></div>
-                            <img src="./img/jordan_pink.png" alt="Air Jordan Low" class="womanSliderImage">
-                        </div>
-                    </div>
-                    <div class="womanSliderItem">
-                        <div class="womanSlideContent">
-                            <span class="womanSlideTag">NEW SEASON</span>
-                            <h1 class="womanSlideTitle">NIKE VOMERO</h1>
-                            <p class="womanSlideSub">Plush cushioning and bold color for miles of confidence.</p>
-                            <p class="womanSlidePrice">$129</p>
-                            <a href="#womanProduct"><button type="button" class="womanSlideBtn">SHOP NOW &#8594;</button></a>
-                        </div>
-                        <div class="womanSliderVisual">
-                            <div class="womanBg"></div>
-                            <img src="./img/vomero_woman1.png" alt="Nike Vomero" class="womanSliderImage">
-                        </div>
-                    </div>
-                </div>
+      <div class="womanCategoryInner">
+        <header class="womanCategoryHeader">
+          <span class="womanCategoryTag">WOMEN&apos;S COLLECTION</span>
+          <h2 class="womanSneakers">WOMAN SNEAKERS</h2>
+          <p class="womanCategorySub">
+            Bold silhouettes &mdash; pink accents on deep black.
+          </p>
+        </header>
+        <nav class="womanNav" aria-label="Women sneaker lines">
+          <h3 class="womanItem">AIR FORCE 1</h3>
+          <h3 class="womanItem">AIR JORDAN LOW</h3>
+          <h3 class="womanItem">NIKE VOMERO</h3>
+        </nav>
+        <div class="womanSlider">
+          <div class="womanWrapper">
+            <div class="womanSliderItem">
+              <div class="womanSlideContent">
+                <span class="womanSlideTag">NEW SEASON</span>
+                <h1 class="womanSlideTitle">AIR FORCE 1</h1>
+                <p class="womanSlideSub">
+                  Crisp leather and pearl details for a fresh take on the icon.
+                </p>
+                <p class="womanSlidePrice">$419</p>
+                <a href="#womanProduct"
+                  ><button type="button" class="womanSlideBtn">
+                    SHOP NOW &#8594;
+                  </button></a
+                >
+              </div>
+              <div class="womanSliderVisual">
+                <div class="womanBg"></div>
+                <img
+                  src="./img/woman_airforce1.png"
+                  alt="Air Force 1"
+                  class="womanSliderImage"
+                />
+              </div>
             </div>
+            <div class="womanSliderItem">
+              <div class="womanSlideContent">
+                <span class="womanSlideTag">NEW SEASON</span>
+                <h1 class="womanSlideTitle">AIR JORDAN LOW</h1>
+                <p class="womanSlideSub">
+                  Court heritage with soft pastels and everyday comfort.
+                </p>
+                <p class="womanSlidePrice">$359</p>
+                <a href="#womanProduct"
+                  ><button type="button" class="womanSlideBtn">
+                    SHOP NOW &#8594;
+                  </button></a
+                >
+              </div>
+              <div class="womanSliderVisual">
+                <div class="womanBg"></div>
+                <img
+                  src="./img/jordan_pink.png"
+                  alt="Air Jordan Low"
+                  class="womanSliderImage"
+                />
+              </div>
+            </div>
+            <div class="womanSliderItem">
+              <div class="womanSlideContent">
+                <span class="womanSlideTag">NEW SEASON</span>
+                <h1 class="womanSlideTitle">NIKE VOMERO</h1>
+                <p class="womanSlideSub">
+                  Plush cushioning and bold color for miles of confidence.
+                </p>
+                <p class="womanSlidePrice">$129</p>
+                <a href="#womanProduct"
+                  ><button type="button" class="womanSlideBtn">
+                    SHOP NOW &#8594;
+                  </button></a
+                >
+              </div>
+              <div class="womanSliderVisual">
+                <div class="womanBg"></div>
+                <img
+                  src="./img/vomero_woman1.png"
+                  alt="Nike Vomero"
+                  class="womanSliderImage"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <div class="womanProduct" id="womanProduct">
-        <div class="womanProductInner">
-            <div class="womanProductVisual">
-                <div class="womanProductGlow"></div>
-                <img src="./img/woman_airforce1.png" alt="" class="womanProductImg">
-            </div>
-            <div class="womanProductDetails">
-                <span class="womanProductTag">WOMEN&apos;S PICK</span>
-                <h1 class="womanProductTitle">AIR FORCE 1</h1>
-                <p class="womanProductPrice">$419</p>
-                <p class="womanProductDescription">Pearl-studded Swoosh and soft leather for a luxe take on the street icon. Lightweight cushioning keeps you moving from day to night.</p>
-                <span class="womanProductSectionLabel">Color</span>
-                <div class="womanColors">
-                    <div class="womanColor"></div>
-                    <div class="womanColor"></div>
-                    <div class="womanColor"></div>
-                </div>
-                <span class="womanProductSectionLabel">Size</span>
-                <div class="womanSizes">
-                    <div class="womanSize">37</div>
-                    <div class="womanSize">38</div>
-                    <div class="womanSize">39</div>
-                </div>
-                <button class="womanProductButton">ADD TO CART</button>
-            </div>
+      <div class="womanProductInner">
+        <div class="womanProductVisual">
+          <div class="womanProductGlow"></div>
+          <img src="./img/woman_airforce1.png" alt="" class="womanProductImg" />
         </div>
+        <div class="womanProductDetails">
+          <span class="womanProductTag">WOMEN&apos;S PICK</span>
+          <h1 class="womanProductTitle">AIR FORCE 1</h1>
+          <p class="womanProductPrice">$419</p>
+          <p class="womanProductDescription">
+            Pearl-studded Swoosh and soft leather for a luxe take on the street
+            icon. Lightweight cushioning keeps you moving from day to night.
+          </p>
+          <span class="womanProductSectionLabel">Color</span>
+          <div class="womanColors">
+            <div class="womanColor"></div>
+            <div class="womanColor"></div>
+            <div class="womanColor"></div>
+          </div>
+          <span class="womanProductSectionLabel">Size</span>
+          <div class="womanSizes">
+            <div class="womanSize">37</div>
+            <div class="womanSize">38</div>
+            <div class="womanSize">39</div>
+          </div>
+          <button class="womanProductButton">ADD TO CART</button>
+        </div>
+      </div>
 
-        <div class="payment">
-            <span class="close">&times;</span>
-            <h2 class="payTitle">Personal Information</h2>
-            <label>First name</label>
-            <input type="text" placeholder="Enter your first name here" class="payInput">
-            <label>Last name</label>
-            <input type="text" placeholder="Enter your last name here" class="payInput">
-            <label>Phone number</label>
-            <input type="text" placeholder="Enter your phone number here" class="payInput">
-            <label>Delivery Address</label>
-            <input type="text" placeholder="Enter your address here" class="payInput">
-            <h2 class="payTitle">Card Information</h2>
-            <div class="cardIcons">
-                <img src="./img/visa.png" width="40" class="cardIcon" alt="">
-                <img src="./img/master.png" width="40" class="cardIcon" alt="">
-            </div>
-            <input type="password" class="payInput" placeholder="Enter your 10-digits card number here">
-            <div class="cardInfo">
-                <input type="text" placeholder="mm" class="payInput sm">
-                <input type="text" placeholder="yyyy" class="payInput sm">
-                <input type="text" placeholder="cvv" class="payInput sm">
-            </div>
-            <button class="payButton">Checkout</button>
+      <div class="payment">
+        <span class="close">&times;</span>
+        <h2 class="payTitle">Personal Information</h2>
+        <label>First name</label>
+        <input
+          type="text"
+          placeholder="Enter your first name here"
+          class="payInput"
+        />
+        <label>Last name</label>
+        <input
+          type="text"
+          placeholder="Enter your last name here"
+          class="payInput"
+        />
+        <label>Phone number</label>
+        <input
+          type="text"
+          placeholder="Enter your phone number here"
+          class="payInput"
+        />
+        <label>Delivery Address</label>
+        <input
+          type="text"
+          placeholder="Enter your address here"
+          class="payInput"
+        />
+        <h2 class="payTitle">Card Information</h2>
+        <div class="cardIcons">
+          <img src="./img/visa.png" width="40" class="cardIcon" alt="" />
+          <img src="./img/master.png" width="40" class="cardIcon" alt="" />
         </div>
+        <input
+          type="password"
+          class="payInput"
+          placeholder="Enter your 10-digits card number here"
+        />
+        <div class="cardInfo">
+          <input type="text" placeholder="mm" class="payInput sm" />
+          <input type="text" placeholder="yyyy" class="payInput sm" />
+          <input type="text" placeholder="cvv" class="payInput sm" />
+        </div>
+        <button class="payButton">Checkout</button>
+      </div>
     </div>
 
-    
     <section class="manCategory" id="manCategory">
-        <div class="manCategoryInner">
-            <header class="manCategoryHeader">
-                <span class="manCategoryTag">MEN&apos;S COLLECTION</span>
-                <h2 class="manSneakers">MAN SNEAKERS</h2>
-                <p class="manCategorySub">Built for the court, the road, and the street &mdash; all on black.</p>
-            </header>
-            <nav class="manNav" aria-label="Men sneaker lines">
-                <h3 class="manItem">NIKE LUKA</h3>
-                <h3 class="manItem">AIR PEGASUS</h3>
-                <h3 class="manItem">SKATEBOARD</h3>
-            </nav>
-            <div class="manSlider">
-                <div class="manSliderWrapper">
-                    <div class="manSliderItem">
-                        <div class="manSlideContent">
-                            <span class="manSlideTag">NEW SEASON</span>
-                            <h1 class="manSlideTitle">NIKE LUKA</h1>
-                            <p class="manSlideSub">Hoops-inspired cushioning with a bold low profile for everyday wear.</p>
-                            <p class="manSlidePrice">$129</p>
-                            <a href="#manProduct"><button type="button" class="manSlideBtn">SHOP NOW &#8594;</button></a>
-                        </div>
-                        <div class="manSliderVisual">
-                            <div class="manBg"></div>
-                            <img src="./img/man/luka_red.png" alt="Nike Luka" class="manSliderImg">
-                        </div>
-                    </div>
-                    <div class="manSliderItem">
-                        <div class="manSlideContent">
-                            <span class="manSlideTag">NEW SEASON</span>
-                            <h1 class="manSlideTitle">AIR PEGASUS</h1>
-                            <p class="manSlideSub">Responsive foam and breathable upper for miles of smooth running.</p>
-                            <p class="manSlidePrice">$359</p>
-                            <a href="#manProduct"><button type="button" class="manSlideBtn">SHOP NOW &#8594;</button></a>
-                        </div>
-                        <div class="manSliderVisual">
-                            <div class="manBg"></div>
-                            <img src="./img/man/running_white.png" alt="Air Pegasus" class="manSliderImg">
-                        </div>
-                    </div>
-                    <div class="manSliderItem">
-                        <div class="manSlideContent">
-                            <span class="manSlideTag">NEW SEASON</span>
-                            <h1 class="manSlideTitle">SKATEBOARD</h1>
-                            <p class="manSlideSub">Durable suede and grippy sole for park sessions and city commutes.</p>
-                            <p class="manSlidePrice">$129</p>
-                            <a href="#manProduct"><button type="button" class="manSlideBtn">SHOP NOW &#8594;</button></a>
-                        </div>
-                        <div class="manSliderVisual">
-                            <div class="manBg"></div>
-                            <img src="./img/man/skateboard.png" alt="Skateboard sneaker" class="manSliderImg">
-                        </div>
-                    </div>
-                </div>
+      <div class="manCategoryInner">
+        <header class="manCategoryHeader">
+          <span class="manCategoryTag">MEN&apos;S COLLECTION</span>
+          <h2 class="manSneakers">MAN SNEAKERS</h2>
+          <p class="manCategorySub">
+            Built for the court, the road, and the street &mdash; all on black.
+          </p>
+        </header>
+        <nav class="manNav" aria-label="Men sneaker lines">
+          <h3 class="manItem">NIKE LUKA</h3>
+          <h3 class="manItem">AIR PEGASUS</h3>
+          <h3 class="manItem">SKATEBOARD</h3>
+        </nav>
+        <div class="manSlider">
+          <div class="manSliderWrapper">
+            <div class="manSliderItem">
+              <div class="manSlideContent">
+                <span class="manSlideTag">NEW SEASON</span>
+                <h1 class="manSlideTitle">NIKE LUKA</h1>
+                <p class="manSlideSub">
+                  Hoops-inspired cushioning with a bold low profile for everyday
+                  wear.
+                </p>
+                <p class="manSlidePrice">$129</p>
+                <a href="#manProduct"
+                  ><button type="button" class="manSlideBtn">
+                    SHOP NOW &#8594;
+                  </button></a
+                >
+              </div>
+              <div class="manSliderVisual">
+                <div class="manBg"></div>
+                <img
+                  src="./img/man/luka_red.png"
+                  alt="Nike Luka"
+                  class="manSliderImg"
+                />
+              </div>
             </div>
+            <div class="manSliderItem">
+              <div class="manSlideContent">
+                <span class="manSlideTag">NEW SEASON</span>
+                <h1 class="manSlideTitle">AIR PEGASUS</h1>
+                <p class="manSlideSub">
+                  Responsive foam and breathable upper for miles of smooth
+                  running.
+                </p>
+                <p class="manSlidePrice">$359</p>
+                <a href="#manProduct"
+                  ><button type="button" class="manSlideBtn">
+                    SHOP NOW &#8594;
+                  </button></a
+                >
+              </div>
+              <div class="manSliderVisual">
+                <div class="manBg"></div>
+                <img
+                  src="./img/man/running_white.png"
+                  alt="Air Pegasus"
+                  class="manSliderImg"
+                />
+              </div>
+            </div>
+            <div class="manSliderItem">
+              <div class="manSlideContent">
+                <span class="manSlideTag">NEW SEASON</span>
+                <h1 class="manSlideTitle">SKATEBOARD</h1>
+                <p class="manSlideSub">
+                  Durable suede and grippy sole for park sessions and city
+                  commutes.
+                </p>
+                <p class="manSlidePrice">$129</p>
+                <a href="#manProduct"
+                  ><button type="button" class="manSlideBtn">
+                    SHOP NOW &#8594;
+                  </button></a
+                >
+              </div>
+              <div class="manSliderVisual">
+                <div class="manBg"></div>
+                <img
+                  src="./img/man/skateboard.png"
+                  alt="Skateboard sneaker"
+                  class="manSliderImg"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <div class="manProduct" id="manProduct">
-        <div class="manProductInner">
-            <div class="manProductVisual">
-                <div class="manProductGlow"></div>
-                <img src="./img/man/luka_black.png" alt="" class="manProductImg">
-            </div>
-            <div class="manProductDetails">
-                <span class="manProductTag">MEN&apos;S PICK</span>
-                <h1 class="manProductTitle">NIKE LUKA SNEAKERS</h1>
-                <p class="manProductPrice">$129</p>
-                <p class="manProductDescription">Low-cut hoops style with responsive cushioning and a bold outsole. Built for the court and the street.</p>
-                <div class="manColorRow">
-                    <span class="manProductSectionLabel">Color</span>
-                    <div class="manColors">
-                        <div class="manColor"></div>
-                        <div class="manColor"></div>
-                    </div>
-                </div>
-                <span class="manProductSectionLabel">Size</span>
-                <div class="manSizes">
-                    <div class="manSize">44</div>
-                    <div class="manSize">43</div>
-                    <div class="manSize">42</div>
-                </div>
-                <button class="manProductButton">ADD TO CART</button>
-            </div>
+      <div class="manProductInner">
+        <div class="manProductVisual">
+          <div class="manProductGlow"></div>
+          <img src="./img/man/luka_black.png" alt="" class="manProductImg" />
         </div>
+        <div class="manProductDetails">
+          <span class="manProductTag">MEN&apos;S PICK</span>
+          <h1 class="manProductTitle">NIKE LUKA SNEAKERS</h1>
+          <p class="manProductPrice">$129</p>
+          <p class="manProductDescription">
+            Low-cut hoops style with responsive cushioning and a bold outsole.
+            Built for the court and the street.
+          </p>
+          <div class="manColorRow">
+            <span class="manProductSectionLabel">Color</span>
+            <div class="manColors">
+              <div class="manColor"></div>
+              <div class="manColor"></div>
+            </div>
+          </div>
+          <span class="manProductSectionLabel">Size</span>
+          <div class="manSizes">
+            <div class="manSize">44</div>
+            <div class="manSize">43</div>
+            <div class="manSize">42</div>
+          </div>
+          <button class="manProductButton">ADD TO CART</button>
+        </div>
+      </div>
 
-        <div class="payment">
-            <span class="close">&times;</span>
-            <h2 class="payTitle">Personal Information</h2>
-            <label>First name</label>
-            <input type="text" placeholder="Enter your first name here" class="payInput">
-            <label>Last name</label>
-            <input type="text" placeholder="Enter your last name here" class="payInput">
-            <label>Phone number</label>
-            <input type="text" placeholder="Enter your phone number here" class="payInput">
-            <label>Delivery Address</label>
-            <input type="text" placeholder="Enter your address here" class="payInput">
-            <h2 class="payTitle">Card Information</h2>
-            <div class="cardIcons">
-                <img src="./img/visa.png" width="40" class="cardIcon" alt="">
-                <img src="./img/master.png" width="40" class="cardIcon" alt="">
-            </div>
-            <input type="password" class="payInput" placeholder="Enter your 10-digits card number here">
-            <div class="cardInfo">
-                <input type="text" placeholder="mm" class="payInput sm">
-                <input type="text" placeholder="yyyy" class="payInput sm">
-                <input type="text" placeholder="cvv" class="payInput sm">
-            </div>
-            <button class="payButton">Checkout</button>
+      <div class="payment">
+        <span class="close">&times;</span>
+        <h2 class="payTitle">Personal Information</h2>
+        <label>First name</label>
+        <input
+          type="text"
+          placeholder="Enter your first name here"
+          class="payInput"
+        />
+        <label>Last name</label>
+        <input
+          type="text"
+          placeholder="Enter your last name here"
+          class="payInput"
+        />
+        <label>Phone number</label>
+        <input
+          type="text"
+          placeholder="Enter your phone number here"
+          class="payInput"
+        />
+        <label>Delivery Address</label>
+        <input
+          type="text"
+          placeholder="Enter your address here"
+          class="payInput"
+        />
+        <h2 class="payTitle">Card Information</h2>
+        <div class="cardIcons">
+          <img src="./img/visa.png" width="40" class="cardIcon" alt="" />
+          <img src="./img/master.png" width="40" class="cardIcon" alt="" />
         </div>
+        <input
+          type="password"
+          class="payInput"
+          placeholder="Enter your 10-digits card number here"
+        />
+        <div class="cardInfo">
+          <input type="text" placeholder="mm" class="payInput sm" />
+          <input type="text" placeholder="yyyy" class="payInput sm" />
+          <input type="text" placeholder="cvv" class="payInput sm" />
+        </div>
+        <button class="payButton">Checkout</button>
+      </div>
     </div>
 
     <!-- SALE SECTION -->
     <section class="saleSection" id="saleSection">
-        <div class="saleHero">
-            <div class="saleHeroOverlay"></div>
-            <div class="saleHeroContent">
-                <span class="saleBadge">LIMITED TIME</span>
-                <h1 class="saleHeroTitle">MEGA SALE</h1>
-                <p class="saleHeroSubtitle">Up to <span class="saleHighlight">50% OFF</span> on selected items</p>
-                <div class="saleTimer">
-                    <div class="saleTimerBlock">
-                        <span class="saleTimerNum" id="saleDays">02</span>
-                        <span class="saleTimerLabel">Days</span>
-                    </div>
-                    <span class="saleTimerSep">:</span>
-                    <div class="saleTimerBlock">
-                        <span class="saleTimerNum" id="saleHours">14</span>
-                        <span class="saleTimerLabel">Hours</span>
-                    </div>
-                    <span class="saleTimerSep">:</span>
-                    <div class="saleTimerBlock">
-                        <span class="saleTimerNum" id="saleMins">36</span>
-                        <span class="saleTimerLabel">Min</span>
-                    </div>
-                    <span class="saleTimerSep">:</span>
-                    <div class="saleTimerBlock">
-                        <span class="saleTimerNum" id="saleSecs">00</span>
-                        <span class="saleTimerLabel">Sec</span>
-                    </div>
-                </div>
+      <div class="saleHero">
+        <div class="saleHeroOverlay"></div>
+        <div class="saleHeroContent">
+          <span class="saleBadge">LIMITED TIME</span>
+          <h1 class="saleHeroTitle">MEGA SALE</h1>
+          <p class="saleHeroSubtitle">
+            Up to <span class="saleHighlight">50% OFF</span> on selected items
+          </p>
+          <div class="saleTimer">
+            <div class="saleTimerBlock">
+              <span class="saleTimerNum" id="saleDays">02</span>
+              <span class="saleTimerLabel">Days</span>
             </div>
+            <span class="saleTimerSep">:</span>
+            <div class="saleTimerBlock">
+              <span class="saleTimerNum" id="saleHours">14</span>
+              <span class="saleTimerLabel">Hours</span>
+            </div>
+            <span class="saleTimerSep">:</span>
+            <div class="saleTimerBlock">
+              <span class="saleTimerNum" id="saleMins">36</span>
+              <span class="saleTimerLabel">Min</span>
+            </div>
+            <span class="saleTimerSep">:</span>
+            <div class="saleTimerBlock">
+              <span class="saleTimerNum" id="saleSecs">00</span>
+              <span class="saleTimerLabel">Sec</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="saleProduct">
+        <div class="saleProductGallery">
+          <div class="saleProductMain">
+            <img
+              src="./img/sale/product1/nike_dunk_low_jordan_1.png"
+              alt="Nike Dunk Low SB"
+              class="saleMainImg"
+              id="saleMainImg"
+            />
+          </div>
+          <div class="saleThumbnails">
+            <img
+              src="./img/sale/product1/nike_dunk_low_jordan_1.png"
+              alt="Side view"
+              class="saleThumb active"
+              data-full="./img/sale/product1/nike_dunk_low_jordan_1.png"
+            />
+            <img
+              src="./img/sale/product1/nike_dunk_low_jordan_2.png"
+              alt="Top view"
+              class="saleThumb"
+              data-full="./img/sale/product1/nike_dunk_low_jordan_2.png"
+            />
+            <img
+              src="./img/sale/product1/nike_dunk_low_jordan_3.png"
+              alt="Pair view"
+              class="saleThumb"
+              data-full="./img/sale/product1/nike_dunk_low_jordan_3.png"
+            />
+            <img
+              src="./img/sale/product1/nike_dunk_low_jordan_4.png"
+              alt="Sole view"
+              class="saleThumb"
+              data-full="./img/sale/product1/nike_dunk_low_jordan_4.png"
+            />
+          </div>
         </div>
 
-        <div class="saleProduct">
-            <div class="saleProductGallery">
-                <div class="saleProductMain">
-                    <img src="./img/sale/product1/nike_dunk_low_jordan_1.png" alt="Nike Dunk Low SB" class="saleMainImg" id="saleMainImg">
-                </div>
-                <div class="saleThumbnails">
-                    <img src="./img/sale/product1/nike_dunk_low_jordan_1.png" alt="Side view" class="saleThumb active" data-full="./img/sale/product1/nike_dunk_low_jordan_1.png">
-                    <img src="./img/sale/product1/nike_dunk_low_jordan_2.png" alt="Top view" class="saleThumb" data-full="./img/sale/product1/nike_dunk_low_jordan_2.png">
-                    <img src="./img/sale/product1/nike_dunk_low_jordan_3.png" alt="Pair view" class="saleThumb" data-full="./img/sale/product1/nike_dunk_low_jordan_3.png">
-                    <img src="./img/sale/product1/nike_dunk_low_jordan_4.png" alt="Sole view" class="saleThumb" data-full="./img/sale/product1/nike_dunk_low_jordan_4.png">
-                </div>
+        <div class="saleProductInfo">
+          <span class="saleTag">SALE</span>
+          <h2 class="saleProductTitle">NIKE DUNK LOW SB</h2>
+          <p class="saleProductEdition">Snakeskin Edition</p>
+          <div class="salePriceRow">
+            <span class="saleOldPrice">$180</span>
+            <span class="saleNewPrice">$89</span>
+            <span class="saleDiscount">-50%</span>
+          </div>
+          <p class="saleProductDesc">
+            Premium snakeskin-textured overlays meet bold purple and teal
+            accents on this limited edition Nike SB Dunk Low. Suede toe box and
+            quarter panels deliver durability for the streets, while the plush
+            purple sockliner keeps every step comfortable.
+          </p>
+          <div class="saleSizes">
+            <span class="saleSizeLabel">Size</span>
+            <div class="saleSizeOptions">
+              <div class="saleSizeBtn">38</div>
+              <div class="saleSizeBtn">39</div>
+              <div class="saleSizeBtn saleSizeActive">40</div>
+              <div class="saleSizeBtn">41</div>
+              <div class="saleSizeBtn">42</div>
+              <div class="saleSizeBtn">43</div>
             </div>
-
-            <div class="saleProductInfo">
-                <span class="saleTag">SALE</span>
-                <h2 class="saleProductTitle">NIKE DUNK LOW SB</h2>
-                <p class="saleProductEdition">Snakeskin Edition</p>
-                <div class="salePriceRow">
-                    <span class="saleOldPrice">$180</span>
-                    <span class="saleNewPrice">$89</span>
-                    <span class="saleDiscount">-50%</span>
-                </div>
-                <p class="saleProductDesc">Premium snakeskin-textured overlays meet bold purple and teal accents on this limited edition Nike SB Dunk Low. Suede toe box and quarter panels deliver durability for the streets, while the plush purple sockliner keeps every step comfortable.</p>
-                <div class="saleSizes">
-                    <span class="saleSizeLabel">Size</span>
-                    <div class="saleSizeOptions">
-                        <div class="saleSizeBtn">38</div>
-                        <div class="saleSizeBtn">39</div>
-                        <div class="saleSizeBtn saleSizeActive">40</div>
-                        <div class="saleSizeBtn">41</div>
-                        <div class="saleSizeBtn">42</div>
-                        <div class="saleSizeBtn">43</div>
-                    </div>
-                </div>
-                <button class="saleBuyBtn">ADD TO CART &mdash; $89</button>
-                <div class="saleFeatures">
-                    <div class="saleFeature">
-                        <span class="saleFeatureIcon">&#10003;</span> Free Shipping
-                    </div>
-                    <div class="saleFeature">
-                        <span class="saleFeatureIcon">&#10003;</span> 30 Day Returns
-                    </div>
-                    <div class="saleFeature">
-                        <span class="saleFeatureIcon">&#10003;</span> Authentic Product
-                    </div>
-                </div>
+          </div>
+          <button class="saleBuyBtn">ADD TO CART &mdash; $89</button>
+          <div class="saleFeatures">
+            <div class="saleFeature">
+              <span class="saleFeatureIcon">&#10003;</span> Free Shipping
             </div>
+            <div class="saleFeature">
+              <span class="saleFeatureIcon">&#10003;</span> 30 Day Returns
+            </div>
+            <div class="saleFeature">
+              <span class="saleFeatureIcon">&#10003;</span> Authentic Product
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Image Lightbox -->
     <div class="lightbox" id="lightbox">
-        <div class="lightboxOverlay"></div>
-        <div class="lightboxContent">
-            <span class="lightboxClose" id="lightboxClose">&times;</span>
-            <img src="" alt="" class="lightboxImg" id="lightboxImg">
-            <div class="lightboxNav">
-                <button class="lightboxArrow lightboxPrev" id="lightboxPrev">&#8249;</button>
-                <button class="lightboxArrow lightboxNext" id="lightboxNext">&#8250;</button>
-            </div>
-            <div class="lightboxCounter" id="lightboxCounter">1 / 4</div>
+      <div class="lightboxOverlay"></div>
+      <div class="lightboxContent">
+        <span class="lightboxClose" id="lightboxClose">&times;</span>
+        <img src="" alt="" class="lightboxImg" id="lightboxImg" />
+        <div class="lightboxNav">
+          <button class="lightboxArrow lightboxPrev" id="lightboxPrev">
+            &#8249;
+          </button>
+          <button class="lightboxArrow lightboxNext" id="lightboxNext">
+            &#8250;
+          </button>
         </div>
+        <div class="lightboxCounter" id="lightboxCounter">1 / 4</div>
+      </div>
     </div>
 
     <footer>
-        <div class="footerLeft">
-            <div class="footerMenu">
-                <h1 class="footerMenuTitle">About Us</h1>
-                <ul class="footerMenuList">
-                    <li class="footerListItem">Company</li>
-                    <li class="footerListItem">Contact</li>
-                    <li class="footerListItem">Careers</li>
-                    <li class="footerListItem">Affiliates</li>
-                    <li class="footerListItem">Stores</li>
-                </ul>
-            </div>
-            <div class="footerMenu">
-                <h1 class="footerMenuTitle">Useful Links</h1>
-                <ul class="footerMenuList">
-                    <li class="footerListItem">Support</li>
-                    <li class="footerListItem">Refund</li>
-                    <li class="footerListItem">FAQ</li>
-                    <li class="footerListItem">Feedback</li>
-                    <li class="footerListItem">Stories</li>
-                </ul>
-            </div>
-            <div class="footerMenu">
-                <h1 class="footerMenuTitle">Products</h1>
-                <ul class="footerMenuList">
-                    <li class="footerListItem">Air Force</li>
-                    <li class="footerListItem">Air Jordan</li>
-                    <li class="footerListItem">Blazer</li>
-                    <li class="footerListItem">Crater</li>
-                    <li class="footerListItem">Hippie</li>
-                </ul>
-            </div>
+      <div class="footerLeft">
+        <div class="footerMenu">
+          <h1 class="footerMenuTitle">About Us</h1>
+          <ul class="footerMenuList">
+            <li class="footerListItem">Company</li>
+            <li class="footerListItem">Contact</li>
+            <li class="footerListItem">Careers</li>
+            <li class="footerListItem">Affiliates</li>
+            <li class="footerListItem">Stores</li>
+          </ul>
         </div>
-        <div class="footerRight">
-            <div class="footerRightMenu">
-                <h1 class="footerMenuTitle">Subscribe to our newsletter</h1>
-                <div class="footerMail">
-                    <input type="text" placeholder="Enter your email here!" class="footerInput">
-                    <button class="footerButton">Subscribe now!</button>
-                </div>
-            </div>
-            <div class="footerRightMenu">
-                <h1 class="footerMenuTitle">Follow Us</h1>
-                <div class="footerIcons">
-                    <img src="./img/facebook.png" alt="" class="footerIcon">
-                    <img src="./img/instagram.png" alt="" class="footerIcon">
-                </div>
-            </div>
-            <div class="footerRightMenu">
-                <span class="copyright">@Georgi Garenov. All Right Reserved. 2026</span>
-            </div>
+        <div class="footerMenu">
+          <h1 class="footerMenuTitle">Useful Links</h1>
+          <ul class="footerMenuList">
+            <li class="footerListItem">Support</li>
+            <li class="footerListItem">Refund</li>
+            <li class="footerListItem">FAQ</li>
+            <li class="footerListItem">Feedback</li>
+            <li class="footerListItem">Stories</li>
+          </ul>
         </div>
+        <div class="footerMenu">
+          <h1 class="footerMenuTitle">Products</h1>
+          <ul class="footerMenuList">
+            <li class="footerListItem">Air Force</li>
+            <li class="footerListItem">Air Jordan</li>
+            <li class="footerListItem">Blazer</li>
+            <li class="footerListItem">Crater</li>
+            <li class="footerListItem">Hippie</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footerRight">
+        <div class="footerRightMenu">
+          <h1 class="footerMenuTitle">Subscribe to our newsletter</h1>
+          <div class="footerMail">
+            <input
+              type="text"
+              placeholder="Enter your email here!"
+              class="footerInput"
+            />
+            <button class="footerButton">Subscribe now!</button>
+          </div>
+        </div>
+        <div class="footerRightMenu">
+          <h1 class="footerMenuTitle">Follow Us</h1>
+          <div class="footerIcons">
+            <img src="./img/facebook.png" alt="" class="footerIcon" />
+            <img src="./img/instagram.png" alt="" class="footerIcon" />
+          </div>
+        </div>
+        <div class="footerRightMenu">
+          <span class="copyright"
+            >@Georgi Garenov. All Right Reserved. 2026</span
+          >
+        </div>
+      </div>
     </footer>
 
     <script src="/app.js"></script>
-</body>
+  </body>
 </html>
