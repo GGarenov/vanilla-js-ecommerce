@@ -369,38 +369,48 @@
     </section>
 
     <div class="manProduct" id="manProduct">
-        <img src="./img/man/luka_black.png" alt="" class="manProductImg">
-        <div class="manProductDetails">
-            <h1 class="manProductTitle">NIKE LUKA SNEAKERS</h1>
-            <h1 class="manProductPrice">$129</h1>
-            <p class="manProductDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam praesentium suscipit consequatur! Cumque consequuntur aliquid, optio, ducimus iure repellat nemo quam in quos sequi itaque autem vero eligendi consequatur expedita.</p>
-            <div class="manColors">
-                <div class="manColor"></div>
-                <div class="manColor"></div>
+        <div class="manProductInner">
+            <div class="manProductVisual">
+                <div class="manProductGlow"></div>
+                <img src="./img/man/luka_black.png" alt="" class="manProductImg">
             </div>
-            <div class="manSizes">
-                <div class="manSize">44</div>
-                <div class="manSize">43</div>
-                <div class="manSize">42</div>
+            <div class="manProductDetails">
+                <span class="manProductTag">MEN&apos;S PICK</span>
+                <h1 class="manProductTitle">NIKE LUKA SNEAKERS</h1>
+                <p class="manProductPrice">$129</p>
+                <p class="manProductDescription">Low-cut hoops style with responsive cushioning and a bold outsole. Built for the court and the street.</p>
+                <div class="manColorRow">
+                    <span class="manProductSectionLabel">Color</span>
+                    <div class="manColors">
+                        <div class="manColor"></div>
+                        <div class="manColor"></div>
+                    </div>
+                </div>
+                <span class="manProductSectionLabel">Size</span>
+                <div class="manSizes">
+                    <div class="manSize">44</div>
+                    <div class="manSize">43</div>
+                    <div class="manSize">42</div>
+                </div>
+                <button class="manProductButton">ADD TO CART</button>
             </div>
-    
-            <button class="manProductButton">BUY NOW</button>
         </div>
 
         <div class="payment">
-            <h1 class="payTitle">Personal Information</h1>
+            <span class="close">&times;</span>
+            <h2 class="payTitle">Personal Information</h2>
             <label>First name</label>
             <input type="text" placeholder="Enter your first name here" class="payInput">
             <label>Last name</label>
             <input type="text" placeholder="Enter your last name here" class="payInput">
             <label>Phone number</label>
-            <input type="text" placeholder="Enter your phone number heer" class="payInput">
+            <input type="text" placeholder="Enter your phone number here" class="payInput">
             <label>Delivery Address</label>
             <input type="text" placeholder="Enter your address here" class="payInput">
-            <h1 class="payTitle">Card Information</h1>
+            <h2 class="payTitle">Card Information</h2>
             <div class="cardIcons">
-                <img src="./img/visa.png" width="40" class="cardIcon">
-                <img src="./img/master.png" width="40" class="cardIcon">
+                <img src="./img/visa.png" width="40" class="cardIcon" alt="">
+                <img src="./img/master.png" width="40" class="cardIcon" alt="">
             </div>
             <input type="password" class="payInput" placeholder="Enter your 10-digits card number here">
             <div class="cardInfo">
@@ -409,10 +419,7 @@
                 <input type="text" placeholder="cvv" class="payInput sm">
             </div>
             <button class="payButton">Checkout</button>
-            <span class="close">X</span>
         </div>
-
-
     </div>
 
     <!-- SALE SECTION -->

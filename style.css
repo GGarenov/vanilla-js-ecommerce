@@ -1483,74 +1483,188 @@ label {
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45));
 }
 
-/* MAN PRODUCT */
+/* Man product (dark + cyan — matches man category) */
 
 .manProduct {
-  height: 100vh;
-  background-color: whitesmoke;
+  min-height: 100vh;
+  background: #111;
   position: relative;
+  padding: 60px clamp(20px, 5vw, 80px);
+  box-sizing: border-box;
+}
+
+.manProductInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(32px, 6vw, 80px);
+}
+
+.manProductVisual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 420px;
+}
+
+.manProductGlow {
+  position: absolute;
+  width: clamp(320px, 36vw, 520px);
+  height: clamp(320px, 36vw, 520px);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #7dd3fc 0%,
+    #0ea5e9 40%,
+    #0c4a6e 100%
+  );
+  opacity: 0.85;
+  filter: blur(2px);
+  box-shadow:
+    0 0 70px rgba(56, 189, 248, 0.35),
+    inset 0 0 50px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
 }
 
 .manProductImg {
-  width: 50%;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
 }
 
 .manProductDetails {
-  position: absolute;
-  top: 10%;
-  right: 0;
-  width: 40%;
-  padding: 50px;
+  flex: 1;
+  max-width: 480px;
+  position: relative;
+  padding: 0;
+}
+
+.manProductTag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #7dd3fc;
+  padding: 6px 20px;
+  border-radius: 50px;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  background: rgba(14, 165, 233, 0.1);
+  margin-bottom: 16px;
 }
 
 .manProductTitle {
-  font-size: 75px;
+  font-size: clamp(40px, 5vw, 64px);
   font-weight: 900;
+  color: #fff;
+  margin: 0 0 8px;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.manProductPrice {
+  font-size: 36px;
+  font-weight: 900;
+  color: #38bdf8;
+  margin: 0 0 20px;
 }
 
 .manProductDescription {
-  font-size: 24px;
-  color: gray;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 300;
+  margin: 0 0 28px;
+}
+
+.manProductSectionLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(125, 211, 252, 0.45);
+  margin-bottom: 10px;
 }
 
 .manColors,
 .manSizes {
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .manColor {
-  width: 32px;
-  height: 32px;
-  border-radius: 5px;
-  background-color: black;
-  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  margin: 0;
   cursor: pointer;
+  border: 2px solid rgba(56, 189, 248, 0.35);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.manColor:hover {
+  transform: scale(1.08);
+  border-color: rgba(125, 211, 252, 0.75);
 }
 
 .manColor:last-child {
-  background-color: darkblue;
+  background-color: #171717;
 }
 
 .manSize {
-  padding: 5px 20px;
-  border: 1px solid black;
-  margin: 20px 20px 20px 0;
+  padding: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  margin: 0;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  background: transparent;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.manSize:hover {
+  border-color: rgba(56, 189, 248, 0.55);
 }
 
 .manProductButton {
-  float: right;
-  padding: 10px 20px;
-  background-color: black;
-  color: white;
-  font-weight: 600;
+  width: 100%;
+  max-width: 360px;
+  margin-top: 8px;
+  padding: 16px 32px;
+  background: #fff;
+  color: #111;
+  border: none;
+  border-radius: 14px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .manProductButton:hover {
-  background-color: white;
-  color: black;
+  background: #0ea5e9;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
 }
 
 footer {
@@ -2351,6 +2465,51 @@ footer {
   }
 
   .womanProductButton {
+    max-width: 100%;
+  }
+
+  .manProduct {
+    padding: 40px 20px 50px;
+  }
+
+  .manProductInner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .manProductVisual {
+    min-height: 280px;
+  }
+
+  .manProductGlow {
+    width: 240px;
+    height: 240px;
+  }
+
+  .manProductImg {
+    max-width: 280px;
+  }
+
+  .manProductDetails {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .manProductDescription {
+    max-width: 340px;
+  }
+
+  .manProductTitle {
+    font-size: 36px;
+  }
+
+  .manProductPrice {
+    font-size: 28px;
+  }
+
+  .manProductButton {
     max-width: 100%;
   }
 

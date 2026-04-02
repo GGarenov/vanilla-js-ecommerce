@@ -216,15 +216,11 @@ const manProducts = [
   },
   {
     id: 3,
-    title: "Nike Vomero",
+    title: "Nike Skate Low",
     price: 129,
     colors: [
       {
         code: "beige",
-        img: "./img/man/skateboard.png",
-      },
-      {
-        code: "lightgray",
         img: "./img/man/skateboard.png",
       },
     ],
@@ -264,6 +260,23 @@ const currentManProductTitle = document.querySelector(".manProductTitle");
 const currentManProductPrice = document.querySelector(".manProductPrice");
 const currentManProductColors = document.querySelectorAll(".manColor");
 const currentManProductSizes = document.querySelectorAll(".manSize");
+const manColorRow = document.querySelector(".manColorRow");
+
+function syncManColorSwatches() {
+  const colors = choosenManProduct.colors;
+  currentManProductColors.forEach((el, i) => {
+    const c = colors[i];
+    if (c) {
+      el.style.display = "";
+      el.style.backgroundColor = c.code;
+    } else {
+      el.style.display = "none";
+    }
+  });
+  if (manColorRow) {
+    manColorRow.style.display = colors.length <= 1 ? "none" : "";
+  }
+}
 
 menuItems.forEach((item, index) => {
   item.addEventListener("click", () => {
@@ -337,9 +350,7 @@ if (manWrapper && manSliderItems.length) {
       if (currentManProductImage) {
         currentManProductImage.src = choosenManProduct.colors[0].img;
       }
-      currentManProductColors.forEach((color, index) => {
-        color.style.backgroundColor = choosenManProduct.colors[index].code;
-      });
+      syncManColorSwatches();
 
       manWrapper.style.transform = `translateX(${(-100 * index) / manSlideCount}%)`;
     });
@@ -364,9 +375,13 @@ syncWomanColorSwatches();
 
 currentManProductColors.forEach((color, index) => {
   color.addEventListener("click", () => {
-    currentManProductImage.src = choosenManProduct.colors[index].img;
+    const variant = choosenManProduct.colors[index];
+    if (!variant) return;
+    currentManProductImage.src = variant.img;
   });
 });
+
+syncManColorSwatches();
 
 currentProductSizes.forEach((size, index) => {
   size.addEventListener("click", () => {
@@ -543,7 +558,7 @@ if (saleMainImg) {
   document.querySelector(".saleProductMain").addEventListener("click", () => {
     const currentSrc = saleMainImg.src;
     const idx = saleGalleryImages.findIndex((img) =>
-      currentSrc.includes(img.replace("./", ""))
+      currentSrc.includes(img.replace("./", "")),
     );
     openLightbox(idx >= 0 ? idx : 0);
   });
@@ -558,7 +573,8 @@ if (lightboxOverlay) lightboxOverlay.addEventListener("click", closeLightbox);
 
 if (lightboxPrev) {
   lightboxPrev.addEventListener("click", () => {
-    lbIndex = (lbIndex - 1 + saleGalleryImages.length) % saleGalleryImages.length;
+    lbIndex =
+      (lbIndex - 1 + saleGalleryImages.length) % saleGalleryImages.length;
     updateLightbox();
   });
 }
@@ -574,7 +590,8 @@ document.addEventListener("keydown", (e) => {
   if (!lightbox.classList.contains("active")) return;
   if (e.key === "Escape") closeLightbox();
   if (e.key === "ArrowLeft") {
-    lbIndex = (lbIndex - 1 + saleGalleryImages.length) % saleGalleryImages.length;
+    lbIndex =
+      (lbIndex - 1 + saleGalleryImages.length) % saleGalleryImages.length;
     updateLightbox();
   }
   if (e.key === "ArrowRight") {
