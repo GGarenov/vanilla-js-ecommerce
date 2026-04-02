@@ -1667,58 +1667,157 @@ label {
   box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
 }
 
-footer {
+/* ==================== FOOTER (dark — matches nav / sale) ==================== */
+
+.siteFooter {
+  background: #111;
+  color: #fafafa;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footerInner {
   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(32px, 5vw, 64px);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 60px);
 }
 
 .footerLeft {
   flex: 2;
   display: flex;
   justify-content: space-between;
-  padding: 50px;
+  gap: 24px;
+  min-width: 0;
 }
 
 .footerMenuTitle {
-  font-size: 16px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fafafa;
+  margin: 0 0 20px;
 }
 
 .footerMenuList {
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
 .footerListItem {
   margin-bottom: 10px;
-  color: gray;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
   cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.footerListItem:hover {
+  color: #369e62;
 }
 
 .footerRight {
   flex: 1;
-  padding: 50px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 28px;
+}
+
+.footerRightMenu:last-child {
+  margin-top: auto;
+}
+
+.footerMail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
 }
 
 .footerInput {
-  padding: 5px;
+  flex: 1 1 200px;
+  min-width: 0;
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+
+.footerInput::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.footerInput:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(54, 158, 98, 0.5);
+  box-shadow: 0 0 0 3px rgba(54, 158, 98, 0.15);
 }
 
 .footerButton {
-  padding: 5px;
-  background-color: black;
-  color: white;
+  flex-shrink: 0;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, #369e62, #2dd47b);
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+
+.footerButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(54, 158, 98, 0.45);
 }
 
 .footerIcons {
   display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .footerIcon {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  opacity: 0.75;
+  cursor: pointer;
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
+  filter: brightness(0) invert(1);
+}
+
+.footerIcon:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.copyright {
+  display: block;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.02em;
 }
 
 /* ==================== SALE SECTION (dark theme) ==================== */
@@ -2535,21 +2634,34 @@ footer {
     padding: 50px;
   }
 
-  footer {
+  .footerInner {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
 
   .footerLeft {
-    padding: 20px;
-    width: 90%;
+    flex-direction: column;
+    width: 100%;
+    gap: 32px;
   }
 
   .footerRight {
-    padding: 20px;
-    width: 90%;
-    align-items: center;
-    background-color: whitesmoke;
+    width: 100%;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .footerRightMenu:last-child {
+    text-align: center;
+  }
+
+  .footerMail {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footerButton {
+    width: 100%;
   }
 
   .payment {
