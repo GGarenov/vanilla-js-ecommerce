@@ -201,7 +201,7 @@ const manProducts = [
   },
   {
     id: 2,
-    title: "AIR PEGAUS SHOES",
+    title: "AIR PEGASUS SHOES",
     price: 359,
     colors: [
       {
@@ -314,8 +314,13 @@ if (womanWrapper && womanSliderItems.length) {
   });
 }
 
-if (manWrapper) {
-  manWrapper.style.width = `${manSliderItems.length * 100}vw`;
+if (manWrapper && manSliderItems.length) {
+  const manSlideCount = manSliderItems.length;
+  manWrapper.style.width = `${manSlideCount * 100}%`;
+  manSliderItems.forEach((slide) => {
+    slide.style.flex = `0 0 ${100 / manSlideCount}%`;
+    slide.style.minWidth = "0";
+  });
 
   manMenuItems.forEach((item, index) => {
     item.addEventListener("click", () => {
@@ -336,8 +341,7 @@ if (manWrapper) {
         color.style.backgroundColor = choosenManProduct.colors[index].code;
       });
 
-      //change the current man slide
-      manWrapper.style.transform = `translateX(${-100 * index}vw)`;
+      manWrapper.style.transform = `translateX(${(-100 * index) / manSlideCount}%)`;
     });
   });
 }
