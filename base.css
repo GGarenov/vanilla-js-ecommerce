@@ -1,0 +1,226 @@
+:root {
+  /* ── Backgrounds ── */
+  --bg: #111;
+  --bg-surface: #1a1a1a;
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --bg-glass-hover: rgba(255, 255, 255, 0.07);
+  --bg-glass-strong: rgba(255, 255, 255, 0.08);
+  --bg-glass-active: rgba(255, 255, 255, 0.15);
+  --bg-pill: rgba(0, 0, 0, 0.35);
+
+  /* ── Text ── */
+  --text: #fafafa;
+  --text-secondary: rgba(255, 255, 255, 0.65);
+  --text-muted: rgba(255, 255, 255, 0.55);
+  --text-subtle: rgba(255, 255, 255, 0.45);
+  --text-faint: rgba(255, 255, 255, 0.35);
+  --text-ghost: rgba(255, 255, 255, 0.25);
+
+  /* ── Borders ── */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.15);
+  --border-hover: rgba(255, 255, 255, 0.4);
+  --border-active: rgba(255, 255, 255, 0.45);
+
+  /* ── Accent (green) ── */
+  --accent: #369e62;
+  --accent-end: #2dd47b;
+  --accent-bright: #4ade80;
+
+  /* ── Buttons ── */
+  --btn-bg: #ffffff;
+  --btn-text: #111111;
+
+  /* ── Icons ── */
+  --icon-filter: brightness(0) invert(1);
+
+  /* ── Shadows ── */
+  --shadow-nav: 0 4px 30px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 24px 80px rgba(0, 0, 0, 0.65);
+
+  --nav-border: none;
+}
+
+/* ── Light theme ── */
+
+[data-theme="light"] {
+  --bg: #e0dfdd;
+  --bg-surface: #eae9e7;
+  --bg-glass: rgba(0, 0, 0, 0.05);
+  --bg-glass-hover: rgba(0, 0, 0, 0.08);
+  --bg-glass-strong: rgba(0, 0, 0, 0.1);
+  --bg-glass-active: rgba(0, 0, 0, 0.14);
+  --bg-pill: rgba(0, 0, 0, 0.07);
+
+  --text: #141414;
+  --text-secondary: rgba(0, 0, 0, 0.7);
+  --text-muted: rgba(0, 0, 0, 0.6);
+  --text-subtle: rgba(0, 0, 0, 0.52);
+  --text-faint: rgba(0, 0, 0, 0.42);
+  --text-ghost: rgba(0, 0, 0, 0.34);
+
+  --border-subtle: rgba(0, 0, 0, 0.07);
+  --border: rgba(0, 0, 0, 0.1);
+  --border-medium: rgba(0, 0, 0, 0.14);
+  --border-strong: rgba(0, 0, 0, 0.18);
+  --border-hover: rgba(0, 0, 0, 0.3);
+  --border-active: rgba(0, 0, 0, 0.4);
+
+  --accent: #2a8a54;
+  --accent-end: #22c55e;
+  --accent-bright: #16a34a;
+
+  --btn-bg: #1a1a1a;
+  --btn-text: #ffffff;
+
+  --icon-filter: brightness(0);
+
+  --shadow-nav: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 24px 60px rgba(0, 0, 0, 0.1);
+
+  --nav-border: 1px solid var(--border-medium);
+}
+
+/* ── Light-mode overrides for section accent text (pastel → deeper) ── */
+
+[data-theme="light"] .womanCategoryTag,
+[data-theme="light"] .womanSlideTag,
+[data-theme="light"] .womanProductTag {
+  color: #be185d;
+  border-color: rgba(190, 24, 93, 0.35);
+  background: rgba(190, 24, 93, 0.08);
+}
+
+[data-theme="light"] .womanCategorySub {
+  color: rgba(190, 24, 93, 0.65);
+}
+
+[data-theme="light"] .womanProductSectionLabel {
+  color: rgba(190, 24, 93, 0.55);
+}
+
+[data-theme="light"] .womanProductPrice {
+  color: #db2777;
+}
+
+[data-theme="light"] .womanSliderItem:nth-child(1) .womanSlidePrice,
+[data-theme="light"] .womanSliderItem:nth-child(3) .womanSlidePrice {
+  color: #db2777;
+}
+
+[data-theme="light"] .womanSliderItem:nth-child(2) .womanSlidePrice {
+  color: #a21caf;
+}
+
+[data-theme="light"] .manCategoryTag,
+[data-theme="light"] .manSlideTag,
+[data-theme="light"] .manProductTag {
+  color: #0369a1;
+  border-color: rgba(3, 105, 161, 0.35);
+  background: rgba(3, 105, 161, 0.08);
+}
+
+[data-theme="light"] .manCategorySub {
+  color: rgba(3, 105, 161, 0.65);
+}
+
+[data-theme="light"] .manProductSectionLabel {
+  color: rgba(3, 105, 161, 0.55);
+}
+
+[data-theme="light"] .manProductPrice {
+  color: #0284c7;
+}
+
+/* ── Always-dark zones (hero overlay, lightbox) ── */
+
+.saleHeroContent {
+  --text: #fafafa;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-subtle: rgba(255, 255, 255, 0.45);
+  --text-faint: rgba(255, 255, 255, 0.35);
+}
+
+.lightbox {
+  --text-muted: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Smooth theme transition ── */
+
+body,
+nav,
+.slider,
+.features,
+.product, .womanProduct, .manProduct,
+.womanCategory, .manCategory,
+.saleSection,
+.siteFooter,
+.payment,
+.feature,
+.womanSlider, .manSlider,
+.footerInput,
+.payInput {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* ── Theme toggle button ── */
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: var(--bg-glass-strong);
+  border: 1px solid var(--border-medium);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    transform 0.25s;
+}
+
+.themeToggle:hover {
+  background: var(--bg-glass-active);
+  border-color: var(--accent);
+  transform: scale(1.08);
+}
+
+.themeToggle svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--text);
+  stroke: none;
+  transition: fill 0.3s, stroke 0.3s;
+}
+
+.themeToggle .icon-sun {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 2;
+  display: none;
+}
+
+.themeToggle .icon-sun circle {
+  fill: var(--text);
+  stroke: none;
+}
+
+.themeToggle .icon-moon {
+  display: block;
+}
+
+[data-theme="light"] .themeToggle .icon-sun {
+  display: block;
+}
+
+[data-theme="light"] .themeToggle .icon-moon {
+  display: none;
+}

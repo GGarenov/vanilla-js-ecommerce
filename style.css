@@ -8,7 +8,7 @@ body {
   font-family: "Lato", sans-serif;
   padding: 0;
   margin: 0;
-  background-color: whitesmoke;
+  background-color: var(--bg);
 }
 
 /* ==================== NAVBAR ==================== */
@@ -17,16 +17,15 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  /* Same solid black as .slider (#111) — no transparency/blur so the bar matches */
-  background: #111;
-  color: white;
+  background: var(--bg);
+  color: var(--text);
   padding: 0 clamp(20px, 4vw, 60px);
-  transition: box-shadow 0.3s;
+  border-bottom: var(--nav-border);
+  transition: box-shadow 0.3s, background-color 0.35s, border-color 0.35s;
 }
 
 nav.scrolled {
-  background: #111;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-nav);
 }
 
 .navBrand {
@@ -42,7 +41,11 @@ nav.scrolled {
   width: 80px;
   height: 80px;
   object-fit: contain;
-  transition: transform 0.3s;
+  transition: transform 0.3s, filter 0.35s;
+}
+
+[data-theme="light"] .logo {
+  filter: invert(1) hue-rotate(180deg);
 }
 
 .logo:hover {
@@ -100,7 +103,7 @@ nav.scrolled {
   letter-spacing: 3px;
   cursor: pointer;
   color: white;
-  background: linear-gradient(135deg, #369e62, #2dd47b);
+  background: linear-gradient(135deg, var(--accent), var(--accent-end));
   padding: 8px 22px;
   border-radius: 50px;
   position: relative;
@@ -142,7 +145,7 @@ nav.scrolled {
   display: block;
   width: 24px;
   height: 2px;
-  background: white;
+  background: var(--text);
   border-radius: 2px;
   transition:
     transform 0.3s,
@@ -169,7 +172,7 @@ nav.scrolled {
   font-weight: 500;
   font-size: 13px;
   letter-spacing: 1.5px;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-muted);
   transition: color 0.3s;
   white-space: nowrap;
 }
@@ -182,13 +185,13 @@ nav.scrolled {
   transform: translateX(-50%) scaleX(0);
   width: 60%;
   height: 2px;
-  background: #369e62;
+  background: var(--accent);
   border-radius: 2px;
   transition: transform 0.3s ease;
 }
 
 .menuItem:hover {
-  color: white;
+  color: var(--text);
 }
 
 .menuItem:hover::after {
@@ -198,7 +201,7 @@ nav.scrolled {
 /* ==================== SLIDER ==================== */
 
 .slider {
-  background: #111;
+  background: var(--bg);
   overflow: hidden;
   position: relative;
 }
@@ -221,7 +224,7 @@ nav.scrolled {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 4px;
-  color: #369e62;
+  color: var(--accent);
   padding: 8px 22px;
   border-radius: 50px;
   border: 1px solid rgba(54, 158, 98, 0.45);
@@ -233,14 +236,14 @@ nav.scrolled {
   font-size: clamp(32px, 4.5vw, 52px);
   font-weight: 900;
   letter-spacing: 4px;
-  color: #fafafa;
+  color: var(--text);
   margin: 0 0 12px;
 }
 
 .sliderSectionSub {
   font-size: 15px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-subtle);
   margin: 0 auto 28px;
   letter-spacing: 0.5px;
   max-width: 520px;
@@ -263,11 +266,11 @@ nav.scrolled {
   font-weight: 700;
   letter-spacing: 2px;
   font-family: inherit;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--text-secondary);
   cursor: pointer;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-pill);
   transition:
     color 0.25s,
     border-color 0.25s,
@@ -277,7 +280,7 @@ nav.scrolled {
 }
 
 .sliderNavItem:hover {
-  color: #fff;
+  color: var(--text);
   border-color: rgba(54, 158, 98, 0.65);
   background: rgba(54, 158, 98, 0.12);
   box-shadow: 0 0 24px rgba(54, 158, 98, 0.2);
@@ -285,8 +288,8 @@ nav.scrolled {
 }
 
 .sliderNavItem.is-active {
-  color: #fff;
-  border-color: #369e62;
+  color: var(--text);
+  border-color: var(--accent);
   background: rgba(54, 158, 98, 0.18);
   box-shadow: 0 0 20px rgba(54, 158, 98, 0.25);
 }
@@ -319,7 +322,7 @@ nav.scrolled {
 .sliderTag {
   display: inline-block;
   background: rgba(54, 158, 98, 0.15);
-  color: #369e62;
+  color: var(--accent);
   padding: 6px 20px;
   border-radius: 50px;
   font-size: 12px;
@@ -332,7 +335,7 @@ nav.scrolled {
 .sliderTitle {
   font-size: clamp(48px, 6vw, 80px);
   font-weight: 900;
-  color: white;
+  color: var(--text);
   margin: 0 0 12px;
   line-height: 1;
   letter-spacing: -1px;
@@ -340,7 +343,7 @@ nav.scrolled {
 
 .sliderSub {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-subtle);
   font-weight: 300;
   line-height: 1.6;
   margin: 0 0 28px;
@@ -361,8 +364,8 @@ nav.scrolled {
 .buyButton {
   display: inline-block;
   padding: 16px 40px;
-  background: white;
-  color: #111;
+  background: var(--btn-bg);
+  color: var(--btn-text);
   border: none;
   border-radius: 14px;
   font-family: inherit;
@@ -374,7 +377,7 @@ nav.scrolled {
 }
 
 .buyButton:hover {
-  background: #369e62;
+  background: var(--accent);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(54, 158, 98, 0.35);
@@ -459,7 +462,7 @@ nav.scrolled {
   justify-content: center;
   gap: 24px;
   padding: 60px clamp(20px, 5vw, 80px);
-  background: #111;
+  background: var(--bg);
 }
 
 .feature {
@@ -469,8 +472,8 @@ nav.scrolled {
   align-items: center;
   text-align: center;
   padding: 36px 24px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
   border-radius: 16px;
   transition:
     transform 0.3s,
@@ -480,7 +483,7 @@ nav.scrolled {
 
 .feature:hover {
   transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--bg-glass-hover);
   border-color: rgba(54, 158, 98, 0.3);
 }
 
@@ -503,7 +506,7 @@ nav.scrolled {
 .featureIcon {
   width: 30px;
   height: 30px;
-  filter: brightness(0) invert(1);
+  filter: var(--icon-filter);
   opacity: 0.85;
 }
 
@@ -511,12 +514,12 @@ nav.scrolled {
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: white;
+  color: var(--text);
   margin: 0 0 10px;
 }
 
 .featureDescription {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-subtle);
   font-size: 13px;
   line-height: 1.6;
   font-weight: 300;
@@ -529,8 +532,8 @@ nav.scrolled {
   width: min(500px, 92vw);
   max-height: 90vh;
   overflow-y: auto;
-  background: #1a1a1a;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 16px;
   position: absolute;
   top: 0;
@@ -542,7 +545,7 @@ nav.scrolled {
   display: none;
   flex-direction: column;
   z-index: 200;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
+  box-shadow: var(--shadow-card);
 }
 
 .payTitle {
@@ -550,7 +553,7 @@ nav.scrolled {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-subtle);
   margin: 16px 0 8px;
 }
 
@@ -561,7 +564,7 @@ nav.scrolled {
 label {
   font-size: 12px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
   letter-spacing: 0.5px;
 }
 
@@ -569,9 +572,9 @@ label {
   padding: 12px 0;
   margin: 4px 0 8px;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid var(--border-medium);
   background: transparent;
-  color: white;
+  color: var(--text);
   font-family: inherit;
   font-size: 15px;
   outline: none;
@@ -579,11 +582,11 @@ label {
 }
 
 .payInput:focus {
-  border-bottom-color: #369e62;
+  border-bottom-color: var(--accent);
 }
 
 .payInput::placeholder {
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--text-ghost);
 }
 
 .cardIcons {
@@ -612,7 +615,7 @@ label {
   left: 0;
   width: 100%;
   border-radius: 0 0 16px 16px;
-  background: #369e62;
+  background: var(--accent);
   color: white;
   border: none;
   cursor: pointer;
@@ -633,8 +636,8 @@ label {
   width: 36px;
   height: 36px;
   position: absolute;
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.7);
+  background: var(--bg-glass-strong);
+  color: var(--text-secondary);
   top: 12px;
   right: 12px;
   display: flex;
@@ -652,21 +655,25 @@ label {
 }
 
 .close:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
+  background: var(--bg-glass-active);
+  color: var(--text);
 }
 
-/* Product section */
+/* Product section (shell shared with woman / man product blocks) */
 
-.product {
+.product,
+.womanProduct,
+.manProduct {
   min-height: 100vh;
-  background: #111;
+  background: var(--bg);
   position: relative;
   padding: 60px clamp(20px, 5vw, 80px);
   box-sizing: border-box;
 }
 
-.productInner {
+.productInner,
+.womanProductInner,
+.manProductInner {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -675,7 +682,9 @@ label {
   gap: clamp(32px, 6vw, 80px);
 }
 
-.productVisual {
+.productVisual,
+.womanProductVisual,
+.manProductVisual {
   flex: 1;
   display: flex;
   align-items: center;
@@ -689,7 +698,7 @@ label {
   width: clamp(320px, 36vw, 520px);
   height: clamp(320px, 36vw, 520px);
   border-radius: 50%;
-  background: #369e62;
+  background: var(--accent);
   opacity: 0.22;
   filter: blur(48px);
   pointer-events: none;
@@ -712,7 +721,9 @@ label {
   transform: scale(1.04) rotate(-20deg);
 }
 
-.productDetails {
+.productDetails,
+.womanProductDetails,
+.manProductDetails {
   flex: 1;
   max-width: 480px;
   position: relative;
@@ -722,7 +733,7 @@ label {
 .productTag {
   display: inline-block;
   background: rgba(54, 158, 98, 0.15);
-  color: #369e62;
+  color: var(--accent);
   padding: 6px 20px;
   border-radius: 50px;
   font-size: 12px;
@@ -735,7 +746,7 @@ label {
 .productTitle {
   font-size: clamp(40px, 5vw, 64px);
   font-weight: 900;
-  color: white;
+  color: var(--text);
   margin: 0 0 8px;
   line-height: 1;
   letter-spacing: -1px;
@@ -744,14 +755,14 @@ label {
 .productPrice {
   font-size: 36px;
   font-weight: 900;
-  color: #369e62;
+  color: var(--accent);
   margin: 0 0 20px;
 }
 
 .productDescription {
   font-size: 16px;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-subtle);
   font-weight: 300;
   margin: 0 0 28px;
 }
@@ -762,7 +773,7 @@ label {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--text-faint);
   margin-bottom: 10px;
 }
 
@@ -781,7 +792,7 @@ label {
   background-color: #111;
   margin: 0;
   cursor: pointer;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid var(--border-strong);
   transition:
     transform 0.2s,
     border-color 0.2s;
@@ -789,7 +800,7 @@ label {
 
 .color:hover {
   transform: scale(1.08);
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: var(--text-subtle);
 }
 
 .color:last-child {
@@ -803,13 +814,13 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid var(--border-strong);
   border-radius: 12px;
   margin: 0;
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text);
   background: transparent;
   transition:
     border-color 0.2s,
@@ -818,7 +829,7 @@ label {
 }
 
 .size:hover {
-  border-color: rgba(255, 255, 255, 0.45);
+  border-color: var(--text-subtle);
 }
 
 .productButton {
@@ -826,8 +837,8 @@ label {
   max-width: 360px;
   margin-top: 8px;
   padding: 16px 32px;
-  background: white;
-  color: #111;
+  background: var(--btn-bg);
+  color: var(--btn-text);
   border: none;
   border-radius: 14px;
   font-family: inherit;
@@ -839,7 +850,7 @@ label {
 }
 
 .productButton:hover {
-  background: #369e62;
+  background: var(--accent);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(54, 158, 98, 0.35);
@@ -847,20 +858,23 @@ label {
 
 /* ==================== WOMAN CATEGORY (dark + pink accents) ==================== */
 
-.womanCategory {
+.womanCategory,
+.manCategory {
   position: relative;
-  background: #111;
+  background: var(--bg);
   padding: 72px 0 48px;
 }
 
-.womanCategoryInner {
+.womanCategoryInner,
+.manCategoryInner {
   position: relative;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 clamp(20px, 4vw, 60px);
 }
 
-.womanCategoryHeader {
+.womanCategoryHeader,
+.manCategoryHeader {
   text-align: center;
   margin-bottom: 40px;
 }
@@ -878,11 +892,12 @@ label {
   margin-bottom: 16px;
 }
 
-.womanSneakers {
+.womanSneakers,
+.manSneakers {
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 900;
   letter-spacing: 4px;
-  color: #fafafa;
+  color: var(--text);
   margin: 0 0 12px;
 }
 
@@ -894,7 +909,8 @@ label {
   letter-spacing: 0.5px;
 }
 
-.womanNav {
+.womanNav,
+.manNav {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -903,17 +919,18 @@ label {
   margin-bottom: 36px;
 }
 
-.womanItem {
+.womanItem,
+.manItem {
   margin: 0;
   padding: 12px 28px;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--text-secondary);
   cursor: pointer;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-pill);
   transition:
     color 0.25s,
     border-color 0.25s,
@@ -923,28 +940,31 @@ label {
 }
 
 .womanItem:hover {
-  color: #fff;
+  color: var(--text);
   border-color: rgba(236, 72, 153, 0.65);
   background: rgba(236, 72, 153, 0.12);
   box-shadow: 0 0 24px rgba(236, 72, 153, 0.2);
   transform: translateY(-2px);
 }
 
-.womanSlider {
+.womanSlider,
+.manSlider {
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: #111;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg);
 }
 
-.womanWrapper {
+/* width & slide flex set in app.js — % of .womanSlider / .manSlider, not 100vw */
+.womanWrapper,
+.manSliderWrapper {
   display: flex;
   transition: transform 1s ease-in-out;
-  /* width & slide flex set in app.js — % of .womanSlider, not 100vw */
 }
 
-.womanSliderItem {
+.womanSliderItem,
+.manSliderItem {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -952,14 +972,22 @@ label {
   gap: clamp(20px, 3vw, 40px);
   position: relative;
   min-width: 0;
-  --woman-circle: min(42vw, 380px);
   min-height: clamp(360px, 58vh, 620px);
   padding: 40px clamp(20px, 3vw, 48px);
   box-sizing: border-box;
 }
 
+.womanSliderItem {
+  --woman-circle: min(42vw, 380px);
+}
+
+.manSliderItem {
+  --man-circle: min(42vw, 380px);
+}
+
 /* Left column — same rhythm as main .slider */
-.womanSlideContent {
+.womanSlideContent,
+.manSlideContent {
   flex: 1;
   min-width: 0;
   max-width: 480px;
@@ -979,32 +1007,36 @@ label {
   border: 1px solid rgba(236, 72, 153, 0.35);
 }
 
-.womanSlideTitle {
+.womanSlideTitle,
+.manSlideTitle {
   font-size: clamp(36px, 4.5vw, 64px);
   font-weight: 900;
-  color: #fff;
+  color: var(--text);
   margin: 0 0 12px;
   line-height: 1;
   letter-spacing: -0.5px;
 }
 
-.womanSlideSub {
+.womanSlideSub,
+.manSlideSub {
   font-size: 16px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-subtle);
   font-weight: 300;
   margin: 0 0 24px;
   max-width: 380px;
 }
 
-.womanSlidePrice {
+.womanSlidePrice,
+.manSlidePrice {
   font-size: 44px;
   font-weight: 900;
   margin: 0 0 28px;
   line-height: 1;
 }
 
-.womanSliderItem:nth-child(1) .womanSlidePrice {
+.womanSliderItem:nth-child(1) .womanSlidePrice,
+.womanSliderItem:nth-child(3) .womanSlidePrice {
   color: #f472b6;
 }
 
@@ -1012,19 +1044,17 @@ label {
   color: #e879f9;
 }
 
-.womanSliderItem:nth-child(3) .womanSlidePrice {
-  color: #f472b6;
-}
-
-.womanSlideContent a {
+.womanSlideContent a,
+.manSlideContent a {
   text-decoration: none;
 }
 
-.womanSlideBtn {
+.womanSlideBtn,
+.manSlideBtn {
   display: inline-block;
   padding: 16px 40px;
-  background: #fff;
-  color: #111;
+  background: var(--btn-bg);
+  color: var(--btn-text);
   border: none;
   border-radius: 14px;
   font-family: inherit;
@@ -1035,14 +1065,16 @@ label {
   transition: all 0.3s;
 }
 
-.womanSlideBtn:hover {
-  background: #369e62;
-  color: #fff;
+.womanSlideBtn:hover,
+.manSlideBtn:hover {
+  background: var(--accent);
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(54, 158, 98, 0.35);
 }
 
-.womanSliderVisual {
+.womanSliderVisual,
+.manSliderVisual {
   position: relative;
   display: flex;
   align-items: center;
@@ -1050,8 +1082,15 @@ label {
   flex: 1;
   min-width: 0;
   max-width: min(480px, 100%);
-  min-height: var(--woman-circle);
   overflow: visible;
+}
+
+.womanSliderVisual {
+  min-height: var(--woman-circle);
+}
+
+.manSliderVisual {
+  min-height: var(--man-circle);
 }
 
 .womanSliderVisual:hover .womanSliderImage {
@@ -1081,7 +1120,8 @@ label {
   pointer-events: none;
 }
 
-.womanSliderImage {
+.womanSliderImage,
+.manSliderImg {
   position: relative;
   z-index: 1;
   width: auto;
@@ -1093,32 +1133,6 @@ label {
 }
 
 /* Woman product (dark + pink — matches woman category) */
-
-.womanProduct {
-  min-height: 100vh;
-  background: #111;
-  position: relative;
-  padding: 60px clamp(20px, 5vw, 80px);
-  box-sizing: border-box;
-}
-
-.womanProductInner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(32px, 6vw, 80px);
-}
-
-.womanProductVisual {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  min-height: 420px;
-}
 
 .womanProductVisual:hover .womanProductImg {
   transform: scale(1.04) rotate(-20deg);
@@ -1155,13 +1169,6 @@ label {
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
 }
 
-.womanProductDetails {
-  flex: 1;
-  max-width: 480px;
-  position: relative;
-  padding: 0;
-}
-
 .womanProductTag {
   display: inline-block;
   background: rgba(236, 72, 153, 0.12);
@@ -1178,7 +1185,7 @@ label {
 .womanProductTitle {
   font-size: clamp(40px, 5vw, 64px);
   font-weight: 900;
-  color: #fff;
+  color: var(--text);
   margin: 0 0 8px;
   line-height: 1;
   letter-spacing: -0.5px;
@@ -1194,7 +1201,7 @@ label {
 .womanProductDescription {
   font-size: 16px;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-subtle);
   font-weight: 300;
   margin: 0 0 28px;
 }
@@ -1246,13 +1253,13 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid var(--border-strong);
   border-radius: 12px;
   margin: 0;
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text);
   background: transparent;
   transition:
     border-color 0.2s,
@@ -1269,8 +1276,8 @@ label {
   max-width: 360px;
   margin-top: 8px;
   padding: 16px 32px;
-  background: #fff;
-  color: #111;
+  background: var(--btn-bg);
+  color: var(--btn-text);
   border: none;
   border-radius: 14px;
   font-family: inherit;
@@ -1283,30 +1290,12 @@ label {
 
 .womanProductButton:hover {
   background: #ec4899;
-  color: #fff;
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
 }
 
 /* ==================== MAN CATEGORY (dark + cool accent) ==================== */
-
-.manCategory {
-  position: relative;
-  background: #111;
-  padding: 72px 0 48px;
-}
-
-.manCategoryInner {
-  position: relative;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 clamp(20px, 4vw, 60px);
-}
-
-.manCategoryHeader {
-  text-align: center;
-  margin-bottom: 40px;
-}
 
 .manCategoryTag {
   display: inline-block;
@@ -1321,14 +1310,6 @@ label {
   margin-bottom: 16px;
 }
 
-.manSneakers {
-  font-size: clamp(36px, 5vw, 56px);
-  font-weight: 900;
-  letter-spacing: 4px;
-  color: #fafafa;
-  margin: 0 0 12px;
-}
-
 .manCategorySub {
   font-size: 15px;
   font-weight: 300;
@@ -1337,74 +1318,12 @@ label {
   letter-spacing: 0.5px;
 }
 
-.manNav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px 16px;
-  margin-bottom: 36px;
-}
-
-.manItem {
-  margin: 0;
-  padding: 12px 28px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.65);
-  cursor: pointer;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(0, 0, 0, 0.35);
-  transition:
-    color 0.25s,
-    border-color 0.25s,
-    background 0.25s,
-    box-shadow 0.25s,
-    transform 0.25s;
-}
-
 .manItem:hover {
-  color: #fff;
+  color: var(--text);
   border-color: rgba(56, 189, 248, 0.65);
   background: rgba(14, 165, 233, 0.12);
   box-shadow: 0 0 24px rgba(56, 189, 248, 0.2);
   transform: translateY(-2px);
-}
-
-.manSlider {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: #111;
-}
-
-.manSliderWrapper {
-  display: flex;
-  transition: transform 1s ease-in-out;
-}
-
-.manSliderItem {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(20px, 3vw, 40px);
-  position: relative;
-  min-width: 0;
-  --man-circle: min(42vw, 380px);
-  min-height: clamp(360px, 58vh, 620px);
-  padding: 40px clamp(20px, 3vw, 48px);
-  box-sizing: border-box;
-}
-
-.manSlideContent {
-  flex: 1;
-  min-width: 0;
-  max-width: 480px;
-  z-index: 2;
 }
 
 .manSlideTag {
@@ -1420,31 +1339,6 @@ label {
   border: 1px solid rgba(56, 189, 248, 0.35);
 }
 
-.manSlideTitle {
-  font-size: clamp(36px, 4.5vw, 64px);
-  font-weight: 900;
-  color: #fff;
-  margin: 0 0 12px;
-  line-height: 1;
-  letter-spacing: -0.5px;
-}
-
-.manSlideSub {
-  font-size: 16px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.45);
-  font-weight: 300;
-  margin: 0 0 24px;
-  max-width: 380px;
-}
-
-.manSlidePrice {
-  font-size: 44px;
-  font-weight: 900;
-  margin: 0 0 28px;
-  line-height: 1;
-}
-
 .manSliderItem:nth-child(1) .manSlidePrice {
   color: #f97316;
 }
@@ -1455,44 +1349,6 @@ label {
 
 .manSliderItem:nth-child(3) .manSlidePrice {
   color: #eab308;
-}
-
-.manSlideContent a {
-  text-decoration: none;
-}
-
-.manSlideBtn {
-  display: inline-block;
-  padding: 16px 40px;
-  background: #fff;
-  color: #111;
-  border: none;
-  border-radius: 14px;
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.manSlideBtn:hover {
-  background: #369e62;
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(54, 158, 98, 0.35);
-}
-
-.manSliderVisual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  min-width: 0;
-  max-width: min(480px, 100%);
-  min-height: var(--man-circle);
-  overflow: visible;
 }
 
 .manSliderVisual:hover .manSliderImg {
@@ -1548,44 +1404,7 @@ label {
     inset 0 0 50px rgba(0, 0, 0, 0.4);
 }
 
-.manSliderImg {
-  position: relative;
-  z-index: 1;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: min(52vh, 480px);
-  object-fit: contain;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45));
-}
-
 /* Man product (dark + cyan — matches man category) */
-
-.manProduct {
-  min-height: 100vh;
-  background: #111;
-  position: relative;
-  padding: 60px clamp(20px, 5vw, 80px);
-  box-sizing: border-box;
-}
-
-.manProductInner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(32px, 6vw, 80px);
-}
-
-.manProductVisual {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  min-height: 420px;
-}
 
 .manProductVisual:hover .manProductImg {
   transform: scale(1.04) rotate(20deg);
@@ -1621,13 +1440,6 @@ label {
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
 }
 
-.manProductDetails {
-  flex: 1;
-  max-width: 480px;
-  position: relative;
-  padding: 0;
-}
-
 .manProductTag {
   display: inline-block;
   font-size: 11px;
@@ -1644,7 +1456,7 @@ label {
 .manProductTitle {
   font-size: clamp(40px, 5vw, 64px);
   font-weight: 900;
-  color: #fff;
+  color: var(--text);
   margin: 0 0 8px;
   line-height: 1;
   letter-spacing: -0.5px;
@@ -1660,7 +1472,7 @@ label {
 .manProductDescription {
   font-size: 16px;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-subtle);
   font-weight: 300;
   margin: 0 0 28px;
 }
@@ -1711,13 +1523,13 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid var(--border-strong);
   border-radius: 12px;
   margin: 0;
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text);
   background: transparent;
   transition:
     border-color 0.2s,
@@ -1734,8 +1546,8 @@ label {
   max-width: 360px;
   margin-top: 8px;
   padding: 16px 32px;
-  background: #fff;
-  color: #111;
+  background: var(--btn-bg);
+  color: var(--btn-text);
   border: none;
   border-radius: 14px;
   font-family: inherit;
@@ -1748,7 +1560,7 @@ label {
 
 .manProductButton:hover {
   background: #0ea5e9;
-  color: #fff;
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
 }
@@ -1756,9 +1568,9 @@ label {
 /* ==================== FOOTER (dark — matches nav / sale) ==================== */
 
 .siteFooter {
-  background: #111;
-  color: #fafafa;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--bg);
+  color: var(--text);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .footerInner {
@@ -1784,7 +1596,7 @@ label {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #fafafa;
+  color: var(--text);
   margin: 0 0 20px;
 }
 
@@ -1797,13 +1609,13 @@ label {
 .footerListItem {
   margin-bottom: 10px;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-muted);
   cursor: pointer;
   transition: color 0.25s ease;
 }
 
 .footerListItem:hover {
-  color: #369e62;
+  color: var(--accent);
 }
 
 .footerRight {
@@ -1831,9 +1643,9 @@ label {
   min-width: 0;
   padding: 12px 20px;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
+  border: 1px solid var(--border-medium);
+  background: var(--bg-glass);
+  color: var(--text);
   font-family: inherit;
   font-size: 14px;
   outline: none;
@@ -1844,11 +1656,11 @@ label {
 }
 
 .footerInput::placeholder {
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--text-faint);
 }
 
 .footerInput:focus {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--bg-glass-hover);
   border-color: rgba(54, 158, 98, 0.5);
   box-shadow: 0 0 0 3px rgba(54, 158, 98, 0.15);
 }
@@ -1864,8 +1676,8 @@ label {
   font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #fff;
-  background: linear-gradient(135deg, #369e62, #2dd47b);
+  color: white;
+  background: linear-gradient(135deg, var(--accent), var(--accent-end));
   transition:
     transform 0.25s,
     box-shadow 0.25s;
@@ -1891,7 +1703,7 @@ label {
   transition:
     opacity 0.25s,
     transform 0.25s;
-  filter: brightness(0) invert(1);
+  filter: var(--icon-filter);
 }
 
 .footerIcon:hover {
@@ -1902,7 +1714,7 @@ label {
 .copyright {
   display: block;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-subtle);
   letter-spacing: 0.02em;
 }
 
@@ -1910,8 +1722,8 @@ label {
 
 .saleSection {
   overflow: hidden;
-  background: #111;
-  color: #fafafa;
+  background: var(--bg);
+  color: var(--text);
 }
 
 /* Hero — photo stays; heavier overlay so it matches #111 page tone */
@@ -1941,13 +1753,13 @@ label {
   position: relative;
   z-index: 1;
   text-align: center;
-  color: #fafafa;
+  color: var(--text);
 }
 
 .saleBadge {
   display: inline-block;
   background: rgba(54, 158, 98, 0.25);
-  color: #fff;
+  color: white;
   padding: 8px 24px;
   border-radius: 50px;
   font-size: 12px;
@@ -1985,11 +1797,11 @@ label {
   font-weight: 300;
   margin-top: 12px;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
 }
 
 .saleHighlight {
-  color: #4ade80;
+  color: var(--accent-bright);
   font-weight: 700;
 }
 
@@ -2007,7 +1819,7 @@ label {
   align-items: center;
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-medium);
   border-radius: 14px;
   padding: 14px 20px;
   min-width: 72px;
@@ -2018,21 +1830,21 @@ label {
   font-weight: 900;
   line-height: 1;
   font-variant-numeric: tabular-nums;
-  color: #fff;
+  color: var(--text);
 }
 
 .saleTimerLabel {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-subtle);
   margin-top: 4px;
 }
 
 .saleTimerSep {
   font-size: 28px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--text-faint);
   line-height: 1;
   padding-bottom: 16px;
 }
@@ -2054,8 +1866,8 @@ label {
 
 .saleProductMain {
   position: relative;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
   border-radius: 20px;
   overflow: hidden;
   display: flex;
@@ -2094,7 +1906,7 @@ label {
   width: calc(25% - 9px);
   aspect-ratio: 1;
   object-fit: contain;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-glass);
   border-radius: 12px;
   cursor: pointer;
   border: 2px solid transparent;
@@ -2107,11 +1919,11 @@ label {
 
 .saleThumb:hover {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--bg-glass-hover);
 }
 
 .saleThumb.active {
-  border-color: #369e62;
+  border-color: var(--accent);
   background: rgba(54, 158, 98, 0.08);
 }
 
@@ -2136,12 +1948,12 @@ label {
   font-weight: 900;
   margin: 16px 0 0;
   line-height: 1.1;
-  color: #fafafa;
+  color: var(--text);
 }
 
 .saleProductEdition {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-subtle);
   margin: 6px 0 24px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -2157,7 +1969,7 @@ label {
 
 .saleOldPrice {
   font-size: 22px;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--text-faint);
   text-decoration: line-through;
   font-weight: 400;
 }
@@ -2165,7 +1977,7 @@ label {
 .saleNewPrice {
   font-size: 40px;
   font-weight: 900;
-  color: #4ade80;
+  color: var(--accent-bright);
 }
 
 .saleDiscount {
@@ -2181,7 +1993,7 @@ label {
 .saleProductDesc {
   font-size: 15px;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
   margin-bottom: 28px;
 }
 
@@ -2196,7 +2008,7 @@ label {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 12px;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-subtle);
 }
 
 .saleSizeOptions {
@@ -2211,31 +2023,31 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid var(--border-strong);
   border-radius: 12px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
   background: transparent;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text);
 }
 
 .saleSizeBtn:hover {
-  border-color: rgba(255, 255, 255, 0.45);
+  border-color: var(--text-subtle);
 }
 
 .saleSizeBtn.saleSizeActive {
-  background: #fafafa;
-  color: #111;
-  border-color: #fafafa;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border-color: var(--btn-bg);
 }
 
 .saleBuyBtn {
   width: 100%;
   padding: 16px 24px;
-  background: #fafafa;
-  color: #111;
+  background: var(--btn-bg);
+  color: var(--btn-text);
   border: none;
   border-radius: 14px;
   font-size: 15px;
@@ -2247,8 +2059,8 @@ label {
 }
 
 .saleBuyBtn:hover {
-  background: #369e62;
-  color: #fff;
+  background: var(--accent);
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(54, 158, 98, 0.35);
 }
@@ -2262,14 +2074,14 @@ label {
 
 .saleFeature {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-subtle);
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
 .saleFeatureIcon {
-  color: #4ade80;
+  color: var(--accent-bright);
   font-weight: 700;
   font-size: 16px;
 }
@@ -2419,26 +2231,7 @@ label {
     height: clamp(260px, 34vw, 420px);
   }
 
-  .womanSliderItem {
-    flex-direction: column;
-    gap: 32px;
-    padding: 36px 32px;
-    min-height: auto;
-  }
-
-  .womanSlideContent {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
-  }
-
-  .womanSliderVisual {
-    order: -1;
-    max-width: 400px;
-  }
-
+  .womanSliderItem,
   .manSliderItem {
     flex-direction: column;
     gap: 32px;
@@ -2446,6 +2239,7 @@ label {
     min-height: auto;
   }
 
+  .womanSlideContent,
   .manSlideContent {
     text-align: center;
     display: flex;
@@ -2454,6 +2248,7 @@ label {
     max-width: 100%;
   }
 
+  .womanSliderVisual,
   .manSliderVisual {
     order: -1;
     max-width: 400px;
@@ -2492,7 +2287,7 @@ label {
     flex-direction: column;
     align-items: center;
     padding: 8px 0 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid var(--border);
   }
 
   .navCenter.open {
@@ -2504,7 +2299,7 @@ label {
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-secondary);
   }
 
   .menuItem::after {
@@ -2583,120 +2378,40 @@ label {
     padding: 28px 20px;
   }
 
-  .product {
-    clip-path: none;
-    padding: 40px 20px 50px;
-  }
-
-  .productInner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .productVisual {
-    min-height: 280px;
-  }
-
-  .productGlow {
-    width: 240px;
-    height: 240px;
-  }
-
-  .productImg {
-    max-width: 280px;
-  }
-
-  .productDetails {
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .productDescription {
-    max-width: 340px;
-  }
-
-  .productTitle {
-    font-size: 36px;
-    margin: 0;
-  }
-
-  .productPrice {
-    font-size: 28px;
-  }
-
-  .productButton {
-    max-width: 100%;
-  }
-
-  .womanProduct {
-    padding: 40px 20px 50px;
-  }
-
-  .womanProductInner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .womanProductVisual {
-    min-height: 280px;
-  }
-
-  .womanProductGlow {
-    width: 240px;
-    height: 240px;
-  }
-
-  .womanProductImg {
-    max-width: 280px;
-  }
-
-  .womanProductDetails {
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .womanProductDescription {
-    max-width: 340px;
-  }
-
-  .womanProductTitle {
-    font-size: 36px;
-  }
-
-  .womanProductPrice {
-    font-size: 28px;
-  }
-
-  .womanProductButton {
-    max-width: 100%;
-  }
-
+  .product,
+  .womanProduct,
   .manProduct {
     padding: 40px 20px 50px;
   }
 
+  .productInner,
+  .womanProductInner,
   .manProductInner {
     flex-direction: column;
     text-align: center;
   }
 
+  .productVisual,
+  .womanProductVisual,
   .manProductVisual {
     min-height: 280px;
   }
 
+  .productGlow,
+  .womanProductGlow,
   .manProductGlow {
     width: 240px;
     height: 240px;
   }
 
+  .productImg,
+  .womanProductImg,
   .manProductImg {
     max-width: 280px;
   }
 
+  .productDetails,
+  .womanProductDetails,
   .manProductDetails {
     max-width: 100%;
     display: flex;
@@ -2704,28 +2419,32 @@ label {
     align-items: center;
   }
 
+  .productDescription,
+  .womanProductDescription,
   .manProductDescription {
     max-width: 340px;
   }
 
+  .productTitle,
+  .womanProductTitle,
   .manProductTitle {
     font-size: 36px;
   }
 
+  .productTitle {
+    margin: 0;
+  }
+
+  .productPrice,
+  .womanProductPrice,
   .manProductPrice {
     font-size: 28px;
   }
 
+  .productButton,
+  .womanProductButton,
   .manProductButton {
     max-width: 100%;
-  }
-
-  .newSeason {
-    flex-direction: column;
-  }
-
-  .nsItem:nth-child(2) {
-    padding: 50px;
   }
 
   .footerInner {
@@ -2763,84 +2482,50 @@ label {
     padding: 20px;
   }
 
-  .womanCategory {
-    padding: 48px 0 32px;
-  }
-
-  .womanCategoryHeader {
-    margin-bottom: 28px;
-  }
-
-  .womanNav {
-    margin-bottom: 24px;
-  }
-
-  .womanItem {
-    padding: 10px 16px;
-    font-size: 11px;
-    letter-spacing: 1px;
-  }
-
-  .womanSlider {
-    border-radius: 12px;
-  }
-
-  .womanSliderItem {
-    flex-direction: column;
-    --woman-circle: min(68vw, 280px);
-    min-height: auto;
-    padding: 28px 20px 36px;
-    gap: 28px;
-  }
-
-  .womanSlideContent {
-    order: 2;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-  }
-
-  .womanSlideSub {
-    max-width: 100%;
-  }
-
-  .womanSliderVisual {
-    order: 1;
-    max-width: 100%;
-  }
-
+  .womanCategory,
   .manCategory {
     padding: 48px 0 32px;
   }
 
+  .womanCategoryHeader,
   .manCategoryHeader {
     margin-bottom: 28px;
   }
 
+  .womanNav,
   .manNav {
     margin-bottom: 24px;
   }
 
+  .womanItem,
   .manItem {
     padding: 10px 16px;
     font-size: 11px;
     letter-spacing: 1px;
   }
 
+  .womanSlider,
   .manSlider {
     border-radius: 12px;
   }
 
+  .womanSliderItem,
   .manSliderItem {
     flex-direction: column;
-    --man-circle: min(68vw, 280px);
     min-height: auto;
     padding: 28px 20px 36px;
     gap: 28px;
   }
 
+  .womanSliderItem {
+    --woman-circle: min(68vw, 280px);
+  }
+
+  .manSliderItem {
+    --man-circle: min(68vw, 280px);
+  }
+
+  .womanSlideContent,
   .manSlideContent {
     order: 2;
     text-align: center;
@@ -2850,10 +2535,12 @@ label {
     max-width: 100%;
   }
 
+  .womanSlideSub,
   .manSlideSub {
     max-width: 100%;
   }
 
+  .womanSliderVisual,
   .manSliderVisual {
     order: 1;
     max-width: 100%;

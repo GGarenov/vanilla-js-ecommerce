@@ -1,5 +1,21 @@
 console.log("Ei pedal");
 
+// ==================== THEME TOGGLE ====================
+
+const themeToggle = document.getElementById("themeToggle");
+const root = document.documentElement;
+
+const savedTheme = localStorage.getItem("theme") || "dark";
+root.setAttribute("data-theme", savedTheme);
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  });
+}
+
 // ==================== NAV: STICKY SCROLL + HAMBURGER ====================
 
 const navEl = document.getElementById("nav");
