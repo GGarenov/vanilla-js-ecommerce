@@ -25,7 +25,7 @@ if (hamburger && navMenu) {
 }
 
 const wrapper = document.querySelector(".sliderWrapper");
-const menuItems = document.querySelectorAll(".menuItem");
+const sliderNavItems = document.querySelectorAll(".sliderNavItem");
 
 const womanWrapper = document.querySelector(".womanWrapper");
 const womanMenuItems = document.querySelectorAll(".womanItem");
@@ -278,21 +278,21 @@ function syncManColorSwatches() {
   }
 }
 
-menuItems.forEach((item, index) => {
+sliderNavItems.forEach((item, index) => {
   item.addEventListener("click", () => {
-    //change the current slide
     wrapper.style.transform = `translateX(${-100 * index}vw)`;
 
-    //change the choosen product
     choosenProduct = products[index];
 
-    //change texts of currentProduct
     currentProductTitle.textContent = choosenProduct.title;
     currentProductPrice.textContent = "$" + choosenProduct.price;
     currentProductImage.src = choosenProduct.colors[0].img;
-    currentProductColors.forEach((color, index) => {
-      color.style.backgroundColor = choosenProduct.colors[index].code;
+    currentProductColors.forEach((color, i) => {
+      color.style.backgroundColor = choosenProduct.colors[i].code;
     });
+
+    sliderNavItems.forEach((btn) => btn.classList.remove("is-active"));
+    item.classList.add("is-active");
   });
 });
 
