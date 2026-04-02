@@ -1,4 +1,29 @@
 console.log("Ei pedal");
+
+// ==================== NAV: STICKY SCROLL + HAMBURGER ====================
+
+const navEl = document.getElementById("nav");
+const hamburger = document.getElementById("navHamburger");
+const navMenu = document.getElementById("navMenu");
+
+window.addEventListener("scroll", () => {
+  navEl.classList.toggle("scrolled", window.scrollY > 30);
+});
+
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("open");
+  });
+
+  navMenu.addEventListener("click", (e) => {
+    if (e.target.classList.contains("menuItem")) {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("open");
+    }
+  });
+}
+
 const wrapper = document.querySelector(".sliderWrapper");
 const menuItems = document.querySelectorAll(".menuItem");
 

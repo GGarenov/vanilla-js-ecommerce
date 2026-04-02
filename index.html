@@ -11,31 +11,37 @@
 <body>
     <nav id="nav">
         <div class="navTop">
-                <div class="navItem">
-                    <img src="./img/logo.png" alt="" class="logo">
-                </div>
-                <div class="navItem">
-                    <div class="search">
-                        <input type="text" placeholder="Search..." class="searchInput">
-                        <img src="./img/search.png" width="20" height="20" alt="" class="searchIcon">
-                    </div>
-                </div>
-                <div class="navItem">
-                    <a href="#saleSection" class="onSaleLink"><span class="onSale">PRODUCTS ON SALE!</span></a>
-                </div>
-        </div>
-        
-        <div class="navMid">
-            <h3 class="menuItem">AIR FORCE</h3>
-            <h3 class="menuItem">JORDAN</h3>
-            <h3 class="menuItem">BLAZER</h3>
-            <h3 class="menuItem">CRATER</h3>
-            <h3 class="menuItem">HIPPIE</h3>
+            <a href="#" class="navBrand">
+                <img src="./img/logo.png" alt="Logo" class="logo">
+            </a>
+            <div class="search">
+                <svg class="searchSvg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" placeholder="Search products..." class="searchInput">
+            </div>
+            <div class="navTopRight">
+                <a href="#saleSection" class="onSaleLink">
+                    <span class="onSale">SALE</span>
+                </a>
+                <button class="navHamburger" id="navHamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
 
-        <div class="navBottom">
-            <h3 class="menuItem">MAN</h3>
-            <h3 class="menuItem" id="womanNavItem">WOMAN</h3>
+        <div class="navMenu" id="navMenu">
+            <div class="navMid">
+                <h3 class="menuItem">AIR FORCE</h3>
+                <h3 class="menuItem">JORDAN</h3>
+                <h3 class="menuItem">BLAZER</h3>
+                <h3 class="menuItem">CRATER</h3>
+                <h3 class="menuItem">HIPPIE</h3>
+            </div>
+            <div class="navBottom">
+                <h3 class="menuItem" id="manNavItem">MAN</h3>
+                <h3 class="menuItem" id="womanNavItem">WOMAN</h3>
+            </div>
         </div>
     </nav>
     <div class="slider">
