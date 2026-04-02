@@ -2379,9 +2379,7 @@ label {
   }
 
   .features {
-    flex-direction: column;
-    gap: 16px;
-    padding: 40px 20px;
+    display: none;
   }
 
   .feature {
