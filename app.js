@@ -271,8 +271,14 @@ menuItems.forEach((item, index) => {
   });
 });
 
-if (womanWrapper) {
-  womanWrapper.style.width = `${womanSliderItems.length * 100}vw`;
+if (womanWrapper && womanSliderItems.length) {
+  const womanSlideCount = womanSliderItems.length;
+  /* Slides sized to .womanSlider width (not 100vw) so images are not clipped */
+  womanWrapper.style.width = `${womanSlideCount * 100}%`;
+  womanSliderItems.forEach((slide) => {
+    slide.style.flex = `0 0 ${100 / womanSlideCount}%`;
+    slide.style.minWidth = "0";
+  });
 
   womanMenuItems.forEach((item, index) => {
     item.addEventListener("click", () => {
@@ -293,7 +299,7 @@ if (womanWrapper) {
         color.style.backgroundColor = choosenWomanProduct.colors[index].code;
       });
 
-      womanWrapper.style.transform = `translateX(${-100 * index}vw)`;
+      womanWrapper.style.transform = `translateX(${(-100 * index) / womanSlideCount}%)`;
     });
   });
 }
