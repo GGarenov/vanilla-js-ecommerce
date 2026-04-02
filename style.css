@@ -6,12 +6,18 @@ body {
   font-family: "Lato", sans-serif;
   padding: 0;
   margin: 0;
+  background-color: whitesmoke;
 }
 
 nav {
   background-color: #111;
   color: white;
-  padding: 20px 50px;
+  padding: 5px 50px;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
 }
 
 .navTop {
@@ -37,11 +43,13 @@ nav {
   color: lightgray;
 }
 
-.limitedOffer {
+.onSale {
   font-size: 20px;
   cursor: pointer;
+  color: #369e62;
 }
 
+.navMid,
 .navBottom {
   display: flex;
   align-items: center;
@@ -174,6 +182,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 50px;
+  background-color: whitesmoke;
 }
 
 .feature {
@@ -198,12 +207,6 @@ nav {
   color: gray;
   width: 50%;
   height: 100px;
-}
-
-.product {
-  height: 100vh;
-  background-color: whitesmoke;
-  position: relative;
 }
 
 .payment {
@@ -292,6 +295,14 @@ label {
   padding: 2px;
 }
 
+/* Product style */
+
+.product {
+  height: 100vh;
+  background-color: whitesmoke;
+  position: relative;
+}
+
 .productImg {
   width: 50%;
 }
@@ -354,48 +365,292 @@ label {
   color: black;
 }
 
-.gallery {
+.womanSlider {
+  overflow: hidden;
+}
+
+.womanWrapper {
+  display: flex;
+  transition: all 1s ease-in-out;
+  width: 300vw;
+}
+
+.womanSliderItem {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  --woman-circle: clamp(360px, 40vw, 780px);
+  --woman-offset: clamp(40px, 8vw, 140px);
+  min-height: var(--woman-circle);
+}
+
+.womanBg {
+  width: var(--woman-circle);
+  height: var(--woman-circle);
+  border-radius: 50%;
+  position: absolute;
+  left: auto;
+  right: var(--woman-offset);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgb(235, 84, 134);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.womanCategoryImage {
+  height: var(--woman-circle);
+  position: absolute;
+  left: var(--woman-offset);
+  top: 50%;
+  transform: translateY(-50%);
+  object-fit: contain;
+  width: auto; /* keep the image aligned to the left edge */
+  max-width: var(--woman-circle);
+  z-index: 1;
+}
+
+.womanSliderImage {
+  width: var(--woman-circle);
+  height: var(--woman-circle);
+  position: absolute;
+  right: var(--woman-offset);
+  top: 50%;
+  transform: translateY(-50%);
+  object-fit: contain;
+  z-index: 1;
+}
+
+.womanNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  background: none;
+  cursor: pointer;
+}
+
+.womanSneakers {
+  display: flex;
+  justify-content: right;
+  padding-right: 50px;
+}
+
+/* Woman products */
+
+.womanProduct {
+  height: 100vh;
+  background-color: whitesmoke;
+  position: relative;
+}
+
+.womanProductImg {
+  width: 50%;
+}
+
+.womanProductDetails {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 40%;
   padding: 50px;
+}
+
+.womanProductTitle {
+  font-size: 75px;
+  font-weight: 900;
+}
+
+.womanProductDescription {
+  font-size: 24px;
+  color: gray;
+}
+
+.womanColors,
+.womanSizes {
   display: flex;
 }
 
-.galleryItem {
-  flex: 1;
-  padding: 50px;
+.womanColor {
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  background-color: black;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
-.galleryImg {
-  width: 100%;
+.womanColor:last-child {
+  background-color: darkblue;
 }
 
-.newSeason {
-  display: flex;
+.womanSize {
+  padding: 5px 20px;
+  border: 1px solid black;
+  margin: 20px 20px 20px 0;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-.newSeasonItem {
-  flex: 1;
+.womanProductButton {
+  float: right;
+  padding: 10px 20px;
   background-color: black;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.newSeasonImage {
-  width: 100%;
-  height: 500px;
-}
-
-.newSeasonTitle {
-  font-size: 40px;
-}
-
-.newSeasonButton {
-  padding: 15px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.womanProductButton:hover {
+  background-color: white;
+  color: black;
+}
+
+/* MAN CATEGORY */
+
+.manNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  background: none;
+  cursor: pointer;
+}
+
+.manNav > h3 {
+  margin: 20px;
+}
+
+.manSneakers {
+  display: flex;
+  justify-content: center;
+}
+
+.manSlider {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.manSlider::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/img/man_background.jpg") center / cover no-repeat;
+  filter: grayscale(0.65) blur(2.5px);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+.manSlider > * {
+  position: relative;
+  z-index: 1;
+}
+
+.manSliderWrapper {
+  display: flex;
+  transition: all 1s ease-in-out;
+  width: 300vw;
+}
+
+.manSliderItem {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 100vh;
+}
+
+.manSliderBg {
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000000a2;
+  z-index: 0;
+}
+
+.manSliderImg {
+  z-index: 1;
+  width: 750px;
+  height: 750px;
+  object-fit: contain;
+}
+
+/* MAN PRODUCT */
+
+.manProduct {
+  height: 100vh;
+  background-color: whitesmoke;
+  position: relative;
+}
+
+.manProductImg {
+  width: 50%;
+}
+
+.manProductDetails {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 40%;
+  padding: 50px;
+}
+
+.manProductTitle {
+  font-size: 75px;
+  font-weight: 900;
+}
+
+.manProductDescription {
+  font-size: 24px;
+  color: gray;
+}
+
+.manColors,
+.manSizes {
+  display: flex;
+}
+
+.manColor {
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  background-color: black;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.manColor:last-child {
+  background-color: darkblue;
+}
+
+.manSize {
+  padding: 5px 20px;
+  border: 1px solid black;
+  margin: 20px 20px 20px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.manProductButton {
+  float: right;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.manProductButton:hover {
+  background-color: white;
+  color: black;
 }
 
 footer {
@@ -452,6 +707,465 @@ footer {
   margin-right: 10px;
 }
 
+/* ==================== SALE SECTION ==================== */
+
+.onSaleLink {
+  text-decoration: none;
+}
+
+.saleSection {
+  overflow: hidden;
+}
+
+/* Hero Banner */
+.saleHero {
+  position: relative;
+  height: 420px;
+  background: url("./img/sale/sale_background.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.saleHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(54, 158, 98, 0.45) 100%);
+  z-index: 0;
+}
+
+.saleHeroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+.saleBadge {
+  display: inline-block;
+  background: #369e62;
+  color: white;
+  padding: 6px 24px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  animation: salePulse 2s ease-in-out infinite;
+}
+
+@keyframes salePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+}
+
+.saleHeroTitle {
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 900;
+  letter-spacing: 6px;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+.saleHeroSubtitle {
+  font-size: clamp(16px, 2.5vw, 24px);
+  font-weight: 300;
+  margin-top: 12px;
+  letter-spacing: 2px;
+}
+
+.saleHighlight {
+  color: #369e62;
+  font-weight: 700;
+}
+
+/* Countdown timer */
+.saleTimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.saleTimerBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 14px 20px;
+  min-width: 72px;
+}
+
+.saleTimerNum {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.saleTimerLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.saleTimerSep {
+  font-size: 28px;
+  font-weight: 700;
+  opacity: 0.5;
+  line-height: 1;
+  padding-bottom: 16px;
+}
+
+/* Product area */
+.saleProduct {
+  display: flex;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  align-items: flex-start;
+}
+
+/* Gallery */
+.saleProductGallery {
+  flex: 1;
+  min-width: 0;
+}
+
+.saleProductMain {
+  position: relative;
+  background: #f0f0f0;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  cursor: zoom-in;
+}
+
+.saleMainImg {
+  width: 85%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.saleProductMain:hover .saleMainImg {
+  transform: scale(1.05);
+}
+
+.saleThumbnails {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.saleThumb {
+  width: calc(25% - 9px);
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: #f0f0f0;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  padding: 6px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.saleThumb:hover {
+  transform: translateY(-3px);
+}
+
+.saleThumb.active {
+  border-color: #369e62;
+}
+
+/* Product info */
+.saleProductInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.saleTag {
+  display: inline-block;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 5px 18px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.saleProductTitle {
+  font-size: 42px;
+  font-weight: 900;
+  margin: 16px 0 0;
+  line-height: 1.1;
+}
+
+.saleProductEdition {
+  font-size: 18px;
+  color: #888;
+  margin: 4px 0 24px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.salePriceRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.saleOldPrice {
+  font-size: 22px;
+  color: #aaa;
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.saleNewPrice {
+  font-size: 40px;
+  font-weight: 900;
+  color: #369e62;
+}
+
+.saleDiscount {
+  background: rgba(231, 76, 60, 0.12);
+  color: #e74c3c;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.saleProductDesc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 28px;
+}
+
+/* Sizes */
+.saleSizes {
+  margin-bottom: 32px;
+}
+
+.saleSizeLabel {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.saleSizeOptions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.saleSizeBtn {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: white;
+}
+
+.saleSizeBtn:hover {
+  border-color: #111;
+}
+
+.saleSizeBtn.saleSizeActive {
+  background: #111;
+  color: white;
+  border-color: #111;
+}
+
+/* Buy button */
+.saleBuyBtn {
+  width: 100%;
+  padding: 18px;
+  background: #111;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.saleBuyBtn:hover {
+  background: #369e62;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(54, 158, 98, 0.35);
+}
+
+/* Sale features checkmarks */
+.saleFeatures {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.saleFeature {
+  font-size: 13px;
+  color: #777;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.saleFeatureIcon {
+  color: #369e62;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* ==================== LIGHTBOX ==================== */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightboxOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+.lightboxContent {
+  position: relative;
+  z-index: 1;
+  max-width: 85vw;
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lightboxIn 0.3s ease-out;
+}
+
+@keyframes lightboxIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lightboxImg {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightboxClose {
+  position: absolute;
+  top: -50px;
+  right: -10px;
+  color: white;
+  font-size: 42px;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.2s;
+  line-height: 1;
+  z-index: 2;
+}
+
+.lightboxClose:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.lightboxNav {
+  position: absolute;
+  width: calc(100% + 120px);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.lightboxArrow {
+  pointer-events: all;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: white;
+  font-size: 36px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  line-height: 1;
+}
+
+.lightboxArrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.lightboxCounter {
+  position: absolute;
+  bottom: -44px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+
 @media screen and (max-width: 480px) {
   nav {
     padding: 20px;
@@ -461,6 +1175,7 @@ footer {
     display: none;
   }
 
+  .navMid,
   .navBottom {
     flex-wrap: wrap;
   }
@@ -531,10 +1246,6 @@ footer {
     margin: 0;
   }
 
-  .gallery {
-    display: none;
-  }
-
   .newSeason {
     flex-direction: column;
   }
@@ -563,5 +1274,59 @@ footer {
   .payment {
     width: 90%;
     padding: 20px;
+  }
+
+  .womanSliderItem {
+    --woman-circle: min(62vh, 430px);
+    --woman-offset: clamp(20px, 6vw, 90px);
+  }
+
+  /* Sale section mobile */
+  .saleHero {
+    height: 300px;
+  }
+
+  .saleTimerBlock {
+    padding: 10px 12px;
+    min-width: 54px;
+  }
+
+  .saleTimerNum {
+    font-size: 22px;
+  }
+
+  .saleProduct {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 32px;
+  }
+
+  .saleProductTitle {
+    font-size: 28px;
+  }
+
+  .saleNewPrice {
+    font-size: 32px;
+  }
+
+  .saleSizeBtn {
+    width: 44px;
+    height: 44px;
+    font-size: 13px;
+  }
+
+  .lightboxNav {
+    width: calc(100% + 40px);
+  }
+
+  .lightboxArrow {
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+  }
+
+  .lightboxClose {
+    top: -44px;
+    right: 0;
   }
 }
