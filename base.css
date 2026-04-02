@@ -41,6 +41,7 @@
   --shadow-card: 0 24px 80px rgba(0, 0, 0, 0.65);
 
   --nav-border: none;
+  --nav-bg: #111;
 }
 
 /* ── Light theme ── */
@@ -81,6 +82,7 @@
   --shadow-card: 0 24px 60px rgba(0, 0, 0, 0.1);
 
   --nav-border: 1px solid var(--border-medium);
+  --nav-bg: #f0efed;
 }
 
 /* ── Light-mode overrides for section accent text (pastel → deeper) ── */
